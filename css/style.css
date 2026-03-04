@@ -1,0 +1,743 @@
+/* ========================================
+   CÉLESTE — Base Stylesheet
+   ======================================== */
+
+/* ---------- Font ---------- */
+@font-face {
+  font-family: 'Helvetica Now';
+  src: url('../fonts/HelveticaNowVar.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Reset & Box Model ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Custom Properties ---------- */
+:root {
+  --color-primary: #000000;
+  --color-white: #ffffff;
+  --color-text: #000000;
+  --color-text-light: #777777;
+  --color-border: #e0e0e0;
+
+  --font-heading: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Logo: 25mm / 160mm ≈ 15.6% */
+  --logo-width: 15.6%;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p { margin-bottom: var(--spacing-sm); }
+
+/* ---------- Utility ---------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section { padding: var(--spacing-lg) 0; }
+.text-center { text-align: center; }
+
+/* ============================================
+   HEADER — Logo centrato + MENÙ a destra
+   ============================================ */
+.header {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg) 0 var(--spacing-sm);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Riga logo + menù */
+.header__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo SVG — centrato, 45% */
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  min-width: 180px;
+  max-width: 500px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.header__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bottone MENÙ — fisso a destra dello schermo */
+.header__menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  padding: 0;
+  line-height: 1;
+  transition: opacity var(--transition-fast);
+  position: fixed;
+  top: 0;
+  right: 5vw;
+  z-index: 1001;
+  margin-top: calc(var(--spacing-lg) + 0.5rem + 10px);
+}
+
+.header__menu-toggle:hover {
+  opacity: 0.5;
+}
+
+/* ---------- Dropdown Nav ---------- */
+.header__dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.header__dropdown.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  min-width: 180px;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 0;
+  padding: var(--spacing-sm) 0 0;
+}
+
+.header__nav a {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  padding: 0.2rem 0;
+  transition: opacity var(--transition-fast);
+}
+
+.header__nav a:hover {
+  opacity: 0.5;
+}
+
+/* ============================================
+   HOME PAGE — Full-viewport, no scroll
+   ============================================ */
+body.home {
+  height: 100vh;
+  min-height: 0;           /* override base min-height */
+  overflow: hidden;
+  background-image: url('../img/SFONDO_HOME.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.home .header {
+  background-color: transparent;
+}
+
+body.home .header__logo img {
+  filter: brightness(0) invert(1);   /* SVG bianco */
+}
+
+body.home .header__menu-toggle {
+  color: var(--color-white);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+body.home .header__nav a {
+  color: var(--color-white);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+body.home .header__nav a:hover {
+  opacity: 0.5;
+}
+
+/* ============================================
+   STUDIO PAGE
+   ============================================ */
+.studio {
+  padding: 0 0 var(--spacing-lg);
+}
+
+.studio__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.studio__services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: max-content;
+}
+
+.studio__label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  margin-bottom: 0;
+  display: block;
+}
+
+/* DIREZIONE ARTISTICA: definisce la larghezza del box */
+.studio__label--ref {
+  white-space: nowrap;
+}
+
+.studio__desc {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 0;
+  display: block;
+}
+
+/* ============================================
+   APPUNTAMENTO PAGE
+   ============================================ */
+.appuntamento {
+  padding: 0 0 var(--spacing-lg);
+}
+
+.appuntamento__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.appuntamento__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.appuntamento__link {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-text);
+  line-height: 1.7;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.appuntamento__link:hover {
+  opacity: 0.5;
+}
+
+.appuntamento__note {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  display: block;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   COLLEZIONI PAGE
+   ============================================ */
+.collezioni {
+  padding: 0 0 var(--spacing-lg);
+}
+
+.collezioni__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.collezioni__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.collezioni__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.collezioni__img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.collezioni__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collezioni__name {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.collezioni__desc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   DETTAGLIO (pagina singola collezione)
+   ============================================ */
+.dettaglio {
+  padding: 0 0 var(--spacing-lg);
+}
+
+.dettaglio__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.dettaglio__img {
+  width: 25%;
+  min-width: 200px;
+  max-width: 320px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dettaglio__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dettaglio__desc {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.dettaglio__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: max-content;
+}
+
+.dettaglio__label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  margin-bottom: 0;
+  display: block;
+}
+
+.dettaglio__info {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 0;
+  display: block;
+}
+
+.size-toggle {
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.size-toggle:hover {
+  opacity: 0.5;
+}
+
+.dettaglio__info-link {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-text);
+  line-height: 1.7;
+  display: block;
+  white-space: nowrap;
+  transition: opacity var(--transition-fast);
+}
+
+.dettaglio__info-link:hover {
+  opacity: 0.5;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+  flex: 1;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-md);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: 0;
+  font-weight: 400;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  border: 1px solid var(--color-primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn:hover {
+  opacity: 0.5;
+}
+
+/* ---------- Info Box (SVG cliccabile) ---------- */
+.info-box {
+  display: inline-block;
+  max-width: 400px;
+  width: 100%;
+  transition: opacity var(--transition-fast);
+  cursor: pointer;
+}
+
+.info-box:hover {
+  opacity: 0.75;
+}
+
+.info-box img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--color-white);
+  color: var(--color-text-light);
+  padding: var(--spacing-md) 0;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+/* ---- Tablet & small desktop ---- */
+@media (max-width: 1024px) {
+  .dettaglio__img {
+    width: 35%;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+
+  /* -- Spacing -- */
+  :root {
+    --spacing-lg: 2.5rem;
+    --spacing-md: 1.5rem;
+  }
+
+  /* -- Header -- */
+  .header {
+    padding: var(--spacing-md) 0 var(--spacing-xs);
+  }
+
+  .header__row {
+    justify-content: flex-start;
+  }
+
+  .header__logo {
+    width: 55%;
+    min-width: 160px;
+    margin: 0;
+  }
+
+  .header__menu-toggle {
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    margin-top: calc(var(--spacing-md) + 0.4rem + 10px);
+    right: 5vw;
+  }
+
+  /* -- Nav dropdown: colonna verticale su mobile -- */
+  .header__nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: var(--spacing-sm) 0 0;
+  }
+
+  .header__nav a {
+    font-size: 0.75rem;
+  }
+
+  /* -- Home -- */
+  body.home {
+    background-position: center center;
+  }
+
+  body.home .header__menu-toggle {
+    margin-top: calc(var(--spacing-md) + 0.4rem + 10px);
+  }
+
+  /* -- Collezioni grid: 1 colonna su mobile -- */
+  .collezioni__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .collezioni__item {
+    max-width: 280px;
+  }
+
+  /* -- Dettaglio -- */
+  .dettaglio__img {
+    width: 60%;
+    min-width: 180px;
+    max-width: 280px;
+  }
+
+  .dettaglio__desc {
+    font-size: 0.65rem;
+  }
+
+  .dettaglio__block {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dettaglio__label,
+  .dettaglio__info,
+  .dettaglio__info-link {
+    font-size: 0.85rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* -- Studio -- */
+  .studio__services {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .studio__label,
+  .studio__desc {
+    font-size: 0.85rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .studio__label--ref {
+    white-space: normal;
+  }
+
+  /* -- Appuntamento -- */
+  .appuntamento__info {
+    width: 100%;
+  }
+
+  .appuntamento__link,
+  .appuntamento__note {
+    font-size: 0.85rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* -- Footer -- */
+  .footer p {
+    font-size: 0.6rem;
+  }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 400px) {
+  .header__logo {
+    width: 65%;
+    min-width: 140px;
+  }
+
+  .header__menu-toggle {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .collezioni__item {
+    max-width: 240px;
+  }
+
+  .dettaglio__label,
+  .dettaglio__info,
+  .dettaglio__info-link {
+    font-size: 0.75rem;
+  }
+
+  .studio__label,
+  .studio__desc {
+    font-size: 0.75rem;
+  }
+
+  .appuntamento__link,
+  .appuntamento__note {
+    font-size: 0.75rem;
+  }
+}
