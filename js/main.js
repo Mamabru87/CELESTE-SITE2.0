@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const ref = box.querySelector('.fill-box__ref');
       if (!ref) return;
       const targetWidth = ref.scrollWidth;
-      box.querySelectorAll('.fill-box__fit').forEach(el => {
-        // Azzera letter-spacing e forza width naturale per misurare
+
+      // Funzione condivisa per ricalcolare letter-spacing di un elemento
+      function adjustElement(el) {
         el.style.letterSpacing = '0px';
         el.style.width = 'fit-content';
         const naturalWidth = el.scrollWidth;
@@ -75,7 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
           el.style.letterSpacing = '0px';
         }
         el.style.width = '';
-      });
+      }
+
+      // Applica anche al ref stesso per allineare i ":" al bordo destro
+      adjustElement(ref);
+
+      box.querySelectorAll('.fill-box__fit').forEach(adjustElement);
     });
   }
   // Aspetta il caricamento del font per misurazioni corrette
