@@ -38,20 +38,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- Size / Price toggle ----------
+  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function resetSizeRow(row) {
+    row.querySelectorAll('.size-toggle').forEach(s => {
+      s.textContent = s.dataset.label;
+    });
+  }
+
   document.querySelectorAll('.size-toggle').forEach(span => {
+    span.dataset.label = span.textContent.trim();
+
+    if (supportsHover) {
+      span.addEventListener('mouseenter', () => {
+        span.textContent = span.dataset.price;
+        document.fonts.ready.then(applyFillBox);
+      });
+
+      span.addEventListener('mouseleave', () => {
+        span.textContent = span.dataset.label;
+        document.fonts.ready.then(applyFillBox);
+      });
+
+      return;
+    }
+
     span.addEventListener('click', () => {
-      const isShowingPrice = span.textContent !== span.dataset.size;
-      // Se sta mostrando il prezzo, torna al nome
+      const row = span.closest('.dettaglio__sizes');
+      const isShowingPrice = span.textContent === span.dataset.price;
+
       if (isShowingPrice) {
-        span.textContent = span.dataset.size;
+        span.textContent = span.dataset.label;
       } else {
-        // Ripristina tutti gli altri nella stessa riga
-        span.closest('.dettaglio__sizes').querySelectorAll('.size-toggle').forEach(s => {
-          s.textContent = s.dataset.size;
-        });
+        resetSizeRow(row);
         span.textContent = span.dataset.price;
       }
-      // Ricalcola fill-box dopo il cambio di testo
+
       document.fonts.ready.then(applyFillBox);
     });
   });
@@ -61,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fill-box').forEach(box => {
       const ref = box.querySelector('.fill-box__ref');
       if (!ref) return;
+
+      const fitElements = box.querySelectorAll('.fill-box__fit');
+
       const targetWidth = ref.scrollWidth;
 
       // Funzione condivisa per ricalcolare letter-spacing di un elemento
@@ -81,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Applica anche al ref stesso per allineare i ":" al bordo destro
       adjustElement(ref);
 
-      box.querySelectorAll('.fill-box__fit').forEach(adjustElement);
+      fitElements.forEach(adjustElement);
     });
   }
   // Aspetta il caricamento del font per misurazioni corrette
