@@ -40,6 +40,7 @@
   --desktop-text-row-line-height: 1;
   --desktop-content-offset-from-logo: calc(var(--desktop-header-logo-height) - var(--spacing-sm) + var(--after-logo-extra-gap));
   --menu-font-size: 1.1rem;
+  --desktop-menu-optical-nudge: 2px;
 
   --font-heading: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -140,6 +141,7 @@ p { margin-bottom: var(--spacing-sm); }
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  z-index: 1002;
 }
 
 /* Logo SVG — centrato, 45% */
@@ -152,6 +154,9 @@ p { margin-bottom: var(--spacing-sm); }
   max-width: none;
   flex-shrink: 0;
   margin: 0;
+  position: relative;
+  z-index: 1003;
+  pointer-events: auto;
 }
 
 .header__logo img {
@@ -164,6 +169,7 @@ p { margin-bottom: var(--spacing-sm); }
 .header__menu-toggle {
   background: none;
   border: none;
+  appearance: none;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: var(--menu-font-size);
@@ -172,13 +178,20 @@ p { margin-bottom: var(--spacing-sm); }
   text-transform: uppercase;
   color: var(--color-text);
   padding: 0;
+  height: 1em;
   line-height: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: max-content;
+  white-space: nowrap;
   transition: opacity var(--transition-fast);
   position: fixed;
-  top: 0;
+  top: calc(var(--spacing-lg) + var(--header-logo-height) + var(--desktop-menu-optical-nudge));
   right: 5vw;
   z-index: 1001;
-  margin-top: calc(var(--spacing-lg) + 0.5rem + 10px);
+  margin-top: 0;
+  transform: translateY(-100%);
 }
 
 .header__menu-toggle:hover {
@@ -195,7 +208,7 @@ p { margin-bottom: var(--spacing-sm); }
   top: var(--spacing-lg);
   left: 5vw;
   width: max-content;
-  z-index: 1000;
+  z-index: 999;
   pointer-events: none;
 }
 
@@ -253,6 +266,7 @@ body.home .header {
   --home-logo-height: calc(var(--home-logo-width) * 15.74 / 150.26);
   --after-logo-extra-gap: var(--home-logo-height);
   --header-nav-item-gap: var(--home-logo-height);
+  --desktop-menu-optical-nudge: 0px;
   background-color: transparent;
 }
 
@@ -300,7 +314,6 @@ body.home .header__nav {
 body.home .header__menu-toggle {
   color: var(--color-white);
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  margin-top: calc(var(--spacing-lg) + 0.5rem + 2px);
 }
 
 body.home .header__nav a {
@@ -416,30 +429,32 @@ body.home .home__city {
 }
 
 .appuntamento__info {
+  --appuntamento-contact-font-size: 1.1rem;
+  --appuntamento-contact-line-height: 1.7;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.18rem;
+  gap: 0;
   width: max-content;
-  font-size: var(--menu-font-size);
-  line-height: var(--desktop-text-row-line-height);
+  margin-top: calc((var(--appuntamento-contact-line-height) - var(--desktop-text-row-line-height)) * var(--appuntamento-contact-font-size) * -0.5);
   margin-left: auto;
   margin-right: auto;
 }
 
 .appuntamento__info > :first-child {
-  line-height: var(--desktop-text-row-line-height);
-  padding: var(--desktop-text-row-padding-y) 0;
+  line-height: var(--appuntamento-contact-line-height);
+  padding: 0;
 }
 
 .appuntamento__link {
   font-family: var(--font-body);
-  font-size: 1em;
+  font-size: var(--appuntamento-contact-font-size);
   font-weight: 400;
   letter-spacing: 0;
   color: var(--color-text);
-  line-height: var(--desktop-text-row-line-height);
+  line-height: var(--appuntamento-contact-line-height);
   display: block;
+  white-space: nowrap;
   transition: opacity var(--transition-fast);
 }
 
@@ -449,11 +464,11 @@ body.home .home__city {
 
 .appuntamento__note {
   font-family: var(--font-body);
-  font-size: 1em;
+  font-size: var(--appuntamento-contact-font-size);
   font-weight: 300;
   letter-spacing: 0;
   color: var(--color-text-light);
-  line-height: var(--desktop-text-row-line-height);
+  line-height: var(--appuntamento-contact-line-height);
   display: block;
   white-space: nowrap;
   margin-bottom: 0;
@@ -798,7 +813,7 @@ body.home .home__city {
 
   .header__row {
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: var(--spacing-sm);
   }
 
@@ -814,9 +829,12 @@ body.home .home__city {
     font-size: var(--menu-font-size);
     letter-spacing: 0.25em;
     margin: 0 0 0 auto;
+    height: 1em;
     right: auto;
     top: auto;
     flex: 0 0 auto;
+    align-self: flex-end;
+    transform: none;
   }
 
   /* -- Nav dropdown: colonna verticale su mobile -- */
@@ -935,16 +953,15 @@ body.home .home__city {
 
   /* -- Appuntamento -- */
   .appuntamento__info {
+    --appuntamento-contact-font-size: 0.85rem;
     width: max-content;
     max-width: 100%;
-    font-size: var(--menu-font-size);
     margin-left: 0;
     margin-right: 0;
   }
 
   .appuntamento__link,
   .appuntamento__note {
-    font-size: 1em;
     white-space: nowrap;
   }
 
@@ -988,6 +1005,10 @@ body.home .home__city {
 
   .appuntamento__link,
   .appuntamento__note {
-    font-size: 1em;
+    font-size: var(--appuntamento-contact-font-size);
+  }
+
+  .appuntamento__info {
+    --appuntamento-contact-font-size: var(--menu-font-size);
   }
 }
