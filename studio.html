@@ -2,10 +2,63 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CÉLESTE — Studio">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Lo studio CÉLESTE propone Vase en Résidence, direzione artistica botanica e abbonamenti floreali su misura a Milano.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/img/CELESTE-LOGO.svg">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://www.celestemilano.it/studio.html">
+  <link rel="alternate" hreflang="it" href="https://www.celestemilano.it/studio.html">
+  <link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/studio.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/studio.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CÉLESTE">
+  <meta property="og:title" content="CÉLESTE — Studio">
+  <meta property="og:description" content="Lo studio CÉLESTE propone Vase en Résidence, direzione artistica botanica e abbonamenti floreali su misura a Milano.">
+  <meta property="og:url" content="https://www.celestemilano.it/studio.html">
+  <meta property="og:image" content="https://www.celestemilano.it/img/ARIA.jpg">
+  <meta property="og:locale" content="it_IT">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CÉLESTE — Studio">
+  <meta name="twitter:description" content="Lo studio CÉLESTE propone Vase en Résidence, direzione artistica botanica e abbonamenti floreali su misura a Milano.">
+  <meta name="twitter:image" content="https://www.celestemilano.it/img/ARIA.jpg">
+
   <title>CÉLESTE — Studio</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "CÉLESTE",
+    "url": "https://www.celestemilano.it",
+    "logo": "https://www.celestemilano.it/img/CELESTE-LOGO.svg",
+    "image": "https://www.celestemilano.it/img/ARIA.jpg",
+    "description": "Studio di composizioni floreali di lusso a Milano. Vase en Résidence, direzione artistica botanica, abbonamenti.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Milano",
+      "addressRegion": "MI",
+      "addressCountry": "IT"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "studio@celestemilano.it",
+      "telephone": "+39-338-8978782",
+      "contactType": "customer support"
+    },
+    "sameAs": ["https://www.instagram.com/celeste_milano_/"]
+  }
+  </script>
 </head>
 <body>
 
@@ -16,7 +69,7 @@
         <a href="index.html" class="header__logo">
           <img src="img/CELESTE-LOGO.svg" alt="CÉLESTE">
         </a>
-        <button class="header__menu-toggle" id="menuToggle">Menù</button>
+        <button class="header__menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="dropdown" aria-label="Apri menu di navigazione">Menù</button>
       </div>
 
       <div class="header__dropdown" id="dropdown">
@@ -34,17 +87,35 @@
   <main class="main-content">
     <section class="studio">
       <div class="container">
-        <div class="studio__services fill-box">
-          <p class="studio__label fill-box__fit">Servizi:</p>
-          <p class="studio__label studio__label--section-break fill-box__fit">Vase en Résidence:</p>
-          <p class="studio__desc fill-box__fit">Dialogo tra vaso, spazio e fiori.</p>
-          <p class="studio__desc fill-box__fit">Servizio d'élite dove la composizione</p>
-          <p class="studio__desc fill-box__fit">viene concepita per abitare</p>
-          <p class="studio__desc fill-box__fit">lo spazio del cliente.</p>
-          <p class="studio__label studio__label--section-break studio__label--ref fill-box__ref">Direzione Artistica:</p>
-          <p class="studio__desc fill-box__fit">Scenografie botaniche.</p>
-          <p class="studio__label studio__label--section-break fill-box__fit">Abbonamenti:</p>
-          <p class="studio__desc fill-box__fit">Bellezza a cadenza fissa.</p>
+        <div class="studio__layout">
+          <div class="studio__services fill-box">
+            <p class="studio__label fill-box__fit">Servizi:</p>
+            <p class="studio__label studio__label--section-break fill-box__fit">Vase en Résidence:</p>
+            <p class="studio__desc fill-box__fit">Dialogo tra vaso, spazio e fiori.</p>
+            <p class="studio__desc fill-box__fit">Servizio d'élite dove la composizione</p>
+            <p class="studio__desc fill-box__fit">viene concepita per abitare</p>
+            <p class="studio__desc fill-box__fit">lo spazio del cliente.</p>
+            <p class="studio__label studio__label--section-break studio__label--ref fill-box__ref">Direzione Artistica:</p>
+            <p class="studio__desc fill-box__fit">Scenografie botaniche.</p>
+            <p class="studio__label studio__label--section-break fill-box__fit">Abbonamenti:</p>
+            <p class="studio__desc fill-box__fit">Bellezza a cadenza fissa.</p>
+          </div>
+          <div class="studio__about fill-box">
+            <p class="studio__label fill-box__fit">Natura. Luce. Aria.</p>
+            <p class="studio__desc studio__about-section-break fill-box__fit">Progetto botanico fondato da</p>
+            <p class="studio__desc fill-box__fit">Marco Maria Lombardi.</p>
+            <p class="studio__desc studio__about-section-break fill-box__fit">Lo studio nasce come una ricerca</p>
+            <p class="studio__desc fill-box__fit">sulla forma, sul colore e sulla materia,</p>
+            <p class="studio__desc fill-box__fit">dove la natura attraversa lo spazio.</p>
+            <p class="studio__desc fill-box__fit">Ogni creazione ha il peso di una scultura</p>
+            <p class="studio__desc fill-box__fit">e la leggerezza di un respiro:</p>
+            <p class="studio__desc fill-box__fit">una visione nitida, capace di alternare</p>
+            <p class="studio__desc fill-box__fit">l'etereo a una presenza materica e decisa.</p>
+            <p class="studio__desc studio__about-section-break fill-box__fit">Nessun luogo fisico, un modello nomade.</p>
+            <p class="studio__desc fill-box__fit">C É L E S T E opera esclusivamente</p>
+            <p class="studio__desc fill-box__fit">su commissione: un rito di bellezza</p>
+            <p class="studio__desc studio__label--ref fill-box__ref">botanica concepito su misura per il luogo.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -54,8 +125,16 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 CÉLESTE. Tutti i diritti riservati.</p>
+      <p class="footer__lang"><span class="lang--active">IT</span> / <a href="en/studio.html">EN</a></p>
+      <p class="footer__privacy"><a href="/privacy.html">Privacy</a></p>
     </div>
   </footer>
+
+  <!-- ========== COOKIE NOTICE ========== -->
+  <aside class="cookie-notice" id="cookieNotice" role="note" aria-label="Informativa cookie">
+    <p class="cookie-notice__text">Questo sito non usa cookie di profilazione. <a href="/privacy.html">Privacy</a></p>
+    <button class="cookie-notice__btn" id="cookieAccept" type="button">Ho capito</button>
+  </aside>
 
   <script src="js/main.js"></script>
 </body>

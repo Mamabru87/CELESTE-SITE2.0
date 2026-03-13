@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://www.celestemilano.it/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Collezioni -->
+  <url>
+    <loc>https://www.celestemilano.it/collezioni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/collezioni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/collezioni.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Aria -->
+  <url>
+    <loc>https://www.celestemilano.it/aria.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/aria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/aria.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Metallo -->
+  <url>
+    <loc>https://www.celestemilano.it/metallo.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/metallo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/metallo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Moiré -->
+  <url>
+    <loc>https://www.celestemilano.it/moire.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/moire.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/moire.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Studio -->
+  <url>
+    <loc>https://www.celestemilano.it/studio.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/studio.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Appuntamento -->
+  <url>
+    <loc>https://www.celestemilano.it/appuntamento.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/appuntamento.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/appuntamento.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN Home -->
+  <url>
+    <loc>https://www.celestemilano.it/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EN Collezioni -->
+  <url>
+    <loc>https://www.celestemilano.it/en/collezioni.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/collezioni.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/collezioni.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EN Aria -->
+  <url>
+    <loc>https://www.celestemilano.it/en/aria.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/aria.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/aria.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN Metallo -->
+  <url>
+    <loc>https://www.celestemilano.it/en/metallo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/metallo.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/metallo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN Moiré -->
+  <url>
+    <loc>https://www.celestemilano.it/en/moire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/moire.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/moire.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN Studio -->
+  <url>
+    <loc>https://www.celestemilano.it/en/studio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/studio.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/studio.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- EN Appuntamento -->
+  <url>
+    <loc>https://www.celestemilano.it/en/appuntamento.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/appuntamento.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/appuntamento.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

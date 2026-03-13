@@ -2,9 +2,27 @@
 
 Documento di contesto del progetto, pensato per aiutare chiunque modifichi il sito (persona o AI) a capire rapidamente struttura, logica, contenuti, convenzioni e punti delicati dell'implementazione attuale.
 
-**Stato analizzato il:** 2026-03-07  
+**Stato analizzato il:** 2026-03-13  
 **Tipo progetto:** sito statico HTML/CSS/JS senza build step  
-**Obiettivo del file:** mantenere modifiche future coerenti, veloci e consapevoli
+**Obiettivo del file:** mantenere modifiche future coerenti, veloci e consapevoli  
+**Nuova documentazione modulare disponibile:** vedere `docs/00-indice-operativo.md` per allegare solo il file tematico utile alla prossima modifica.
+
+---
+
+## 0. Documentazione modulare consigliata
+
+Per il lavoro operativo quotidiano, da ora in poi è consigliato usare i file in `docs/` come riferimento tematico rapido:
+
+- `docs/00-indice-operativo.md` → hub e guida su quale file allegare;
+- `docs/01-architettura-struttura.md` → mappa del progetto e impatti globali;
+- `docs/02-pagine-contenuti.md` → contenuti pagina per pagina;
+- `docs/03-design-system-layout.md` → CSS, layout, responsive, tipografia;
+- `docs/04-js-e-interazioni.md` → menu, taglie/prezzi, `fill-box` lato JS;
+- `docs/05-asset-seo-accessibilita.md` → immagini, SEO, accessibilità, performance;
+- `docs/06-manutenzione-checklist.md` → checklist operative e QA;
+- `docs/07-registro-modifiche.md` → storico sintetico documentale.
+
+Questo `README.md` resta il dossier completo e lo storico esteso; i file in `docs/` sono invece il riferimento più pratico e granulare per i prossimi interventi.
 
 ---
 
@@ -110,7 +128,7 @@ Ruolo: home/ingresso del brand.
 
 Contenuto:
 
-- logo centrale cliccabile verso `index.html`;
+- logo allineato a sinistra cliccabile verso `index.html`;
 - pulsante `Menù`;
 - dropdown di navigazione sotto il logo.
 
@@ -197,9 +215,9 @@ Delivery attuale:
 Testo spezzato su più righe, impostato per un controllo molto preciso dell'impaginazione.  
 Contenuto attuale:
 
-- consegna bouquet tramite corriere a Firenze e piccola cintura urbana;
+- consegna bouquet tramite corriere a Milano e piccola cintura urbana;
 - spese nei giorni feriali;
-- Firenze → `25€`;
+- Milano → `25€`;
 - piccola cintura urbana → `40€`.
 
 Contact attuale:
@@ -208,7 +226,7 @@ Ripetuto uguale nelle tre pagine:
 
 - `studio@celestemilano.it`
 - `@celeste_milano_`
-- `+39 338 8978782`
+- `+39 338 8978782` (link WhatsApp `wa.me`)
 - `by appointment only`
 
 Note importanti:
@@ -331,9 +349,9 @@ Valori ricorrenti:
 
 #### Header
 
-- logo centrato;
+- logo allineato a sinistra su desktop;
 - bottone menu fisso a destra della viewport;
-- dropdown che si apre sotto il logo.
+- dropdown che si apre sotto il logo in overlay su desktop e in flusso su mobile.
 
 #### Collezioni
 
@@ -356,11 +374,11 @@ Breakpoints presenti:
 Comportamenti principali su mobile:
 
 - header più compatto;
-- logo più grande in percentuale relativa;
+- logo dimensionato tramite variabili mobili dedicate;
 - menu in colonna verticale;
 - collezioni in una sola colonna;
 - testi delle pagine informative ridotti;
-- blocchi con `white-space: normal` e `word-break: break-word`.
+- blocchi principali riallineati a sinistra e ancora gestiti con `fill-box`.
 
 ### 5.6 Pattern notevoli del CSS
 
@@ -428,8 +446,9 @@ Attivo sugli elementi con classe `.size-toggle`.
 
 Comportamento:
 
-- mostra taglia o prezzo alternandoli;
-- ripristina gli altri elementi della stessa riga;
+- su desktop mostra il prezzo in hover e ripristina la taglia all'uscita;
+- su mobile/touch alterna taglia e prezzo al click;
+- al click su una taglia diversa, ripristina gli altri elementi della stessa riga;
 - al cambio richiama `applyFillBox()` quando i font sono pronti.
 
 ### 6.3 `applyFillBox()`
@@ -692,6 +711,10 @@ Da qui in avanti conviene aggiornare questa sezione a ogni intervento importante
 
 ### Stato attuale
 
+- 2026-03-13
+  - verificato il repository reale contro questo `README.md`.
+  - aggiunta la cartella `docs/` con documentazione modulare per categorie, così in futuro si può allegare solo il file pertinente alla modifica richiesta.
+  - aggiornati in questo `README.md` i punti operativi principali rimasti indietro rispetto al codice attuale: header desktop allineato a sinistra, `Delivery` su Milano, contatto WhatsApp, comportamento `size-toggle` desktop/mobile e nota sul `fill-box` ancora attivo su mobile.
 - 2026-03-07
   - creato questo `README.md`;
   - fotografato lo stato iniziale del sito;

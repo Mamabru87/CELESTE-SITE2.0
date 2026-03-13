@@ -8,17 +8,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const dropdown   = document.getElementById('dropdown');
 
+  function openMenu() {
+    dropdown.classList.add('open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    dropdown.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
   if (menuToggle && dropdown) {
     menuToggle.addEventListener('click', () => {
-      dropdown.classList.toggle('open');
+      const isOpen = dropdown.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
     });
 
-    // Chiudi il menu quando si clicca un link (solo link interni)
+    // Chiudi il menu quando si clicca un link
     dropdown.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        dropdown.classList.remove('open');
-      });
+      link.addEventListener('click', () => closeMenu());
     });
+
+    // Chiudi con tasto ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    // Chiudi cliccando fuori dal menu
+    document.addEventListener('click', (e) => {
+      if (dropdown.classList.contains('open') &&
+          !dropdown.contains(e.target) &&
+          !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  }
+
+  // ---------- Cookie notice ----------
+  const cookieNotice = document.getElementById('cookieNotice');
+  const cookieAccept = document.getElementById('cookieAccept');
+
+  if (cookieNotice) {
+    if (localStorage.getItem('celeste_cookie_ok')) {
+      cookieNotice.classList.add('cookie-notice--hidden');
+    }
+    if (cookieAccept) {
+      cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('celeste_cookie_ok', '1');
+        cookieNotice.classList.add('cookie-notice--hidden');
+      });
+    }
   }
 
   // ---------- Accordion "Come funziona" ----------
@@ -86,9 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const fitElements = box.querySelectorAll('.fill-box__fit');
 
+      // Rimuove l'inline style dal ref prima di misurare: targetWidth è sempre
+      // quello del CSS (0.35em tracking), stabile a ogni resize.
+      ref.style.letterSpacing = '';
+      ref.style.width = 'fit-content';
       const targetWidth = ref.scrollWidth;
+      ref.style.width = '';
 
-      // Funzione condivisa per ricalcolare letter-spacing di un elemento
       function adjustElement(el) {
         el.style.letterSpacing = '0px';
         el.style.width = 'fit-content';
@@ -103,9 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.width = '';
       }
 
-      // Applica anche al ref stesso per allineare i ":" al bordo destro
+      // Espande anche il ref stesso: il suo ":" si allinea al bordo destro
+      // come tutti gli altri. Nessun drift perché al run successivo il reset
+      // ref.style.letterSpacing = '' riporta sempre alla baseline CSS.
       adjustElement(ref);
-
       fitElements.forEach(adjustElement);
     });
   }
