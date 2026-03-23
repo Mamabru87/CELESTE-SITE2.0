@@ -23,9 +23,9 @@ if (document.body.classList.contains('home')) {
     'IMG_0876.webp'
   ];
   const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
-  const src = '/img/sfondi/' + pick;
+  const base = document.querySelector('script[src$="main.js"]').src.replace(/js\/main\.js.*$/, '');
+  const src = base + 'img/sfondi/' + pick;
   const preload = new Image();
-  preload.crossOrigin = 'anonymous';
   preload.onload = () => {
     // Detect average brightness via canvas sampling
     try {
