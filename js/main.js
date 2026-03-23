@@ -25,7 +25,30 @@ if (document.body.classList.contains('home')) {
   const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
   const src = '/img/sfondi/' + pick;
   const preload = new Image();
-  preload.onload = () => { document.body.style.opacity = '1'; };
+  preload.crossOrigin = 'anonymous';
+  preload.onload = () => {
+    // Detect average brightness via canvas sampling
+    try {
+      const canvas = document.createElement('canvas');
+      const size = 64; // sample at small resolution for speed
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(preload, 0, 0, size, size);
+      const data = ctx.getImageData(0, 0, size, size).data;
+      let totalBrightness = 0;
+      const pixelCount = data.length / 4;
+      for (let i = 0; i < data.length; i += 4) {
+        // perceived brightness: 0.299R + 0.587G + 0.114B
+        totalBrightness += data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+      }
+      const avgBrightness = totalBrightness / pixelCount; // 0-255
+      if (avgBrightness > 180) {
+        document.body.classList.add('home--light');
+      }
+    } catch (_) { /* cross-origin or canvas error: keep default white text */ }
+    document.body.style.opacity = '1';
+  };
   preload.onerror = () => { document.body.style.opacity = '1'; };
   document.body.style.backgroundImage = 'url("' + src + '")';
   preload.src = src;

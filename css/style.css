@@ -377,6 +377,38 @@ body.home .home__lang .lang--active {
 }
 
 /* ============================================
+   HOME — Light background overrides (auto-detected)
+   ============================================ */
+body.home.home--light .header__logo img {
+  filter: none;   /* SVG nero (default) */
+}
+
+body.home.home--light .header__menu-toggle {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+body.home.home--light .header__nav a {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+body.home.home--light .home__city {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+body.home.home--light .home__lang {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+body.home.home--light .home__privacy {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+/* ============================================
    STUDIO PAGE
    ============================================ */
 .studio {
