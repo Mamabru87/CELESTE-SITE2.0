@@ -406,7 +406,7 @@ body.home .home__lang .lang--active {
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: calc(2 * var(--desktop-header-logo-height));
+  gap: calc(3 * var(--desktop-header-logo-height));
   width: max-content;
   margin-left: auto;
   margin-right: auto;
@@ -1177,7 +1177,7 @@ body.home .home__privacy a:hover {
   /* -- Studio -- */
   .studio__layout {
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: calc(2 * var(--spacing-lg));
     width: 100%;
     margin-left: 0;
     margin-right: 0;
