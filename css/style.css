@@ -319,14 +319,12 @@ body.home .header__nav {
 
 body.home .header__menu-toggle {
   color: var(--color-white);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 body.home .header__nav a {
   font-size: var(--menu-font-size);
   letter-spacing: 0.35em;
   color: var(--color-white);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 body.home .header__nav a:hover {
@@ -343,7 +341,6 @@ body.home .home__city {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--color-white);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   line-height: 1;
   z-index: 1001;
 }
@@ -358,14 +355,12 @@ body.home .home__lang {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--color-white);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   line-height: 1;
   z-index: 1001;
 }
 
 body.home .home__lang a {
   color: inherit;
-  text-shadow: inherit;
 }
 
 body.home .home__lang a:hover {
@@ -385,27 +380,22 @@ body.home.home--light .header__logo img {
 
 body.home.home--light .header__menu-toggle {
   color: var(--color-text);
-  text-shadow: none;
 }
 
 body.home.home--light .header__nav a {
   color: var(--color-text);
-  text-shadow: none;
 }
 
 body.home.home--light .home__city {
   color: var(--color-text);
-  text-shadow: none;
 }
 
 body.home.home--light .home__lang {
   color: var(--color-text);
-  text-shadow: none;
 }
 
 body.home.home--light .home__privacy {
   color: var(--color-text);
-  text-shadow: none;
 }
 
 /* ============================================
@@ -912,7 +902,6 @@ body.home .home__privacy {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--color-white);
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   line-height: 1;
   z-index: 1001;
   white-space: nowrap;
@@ -920,7 +909,6 @@ body.home .home__privacy {
 
 body.home .home__privacy a {
   color: inherit;
-  text-shadow: inherit;
 }
 
 body.home .home__privacy a:hover {
