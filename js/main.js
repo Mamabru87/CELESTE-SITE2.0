@@ -2,6 +2,35 @@
    CÉLESTE — Main Script
    ======================================== */
 
+// ---------- Random home background ----------
+if (document.body.classList.contains('home')) {
+  const sfondi = [
+    'Generated_Image_March_15,_2026___11_06PM.webp',
+    'Generated_Image_March_15,_2026___11_09PM.webp',
+    'Generated_Image_March_16,_2026___12_14AM.webp',
+    'IMG_0785.webp',
+    'IMG_0786.webp',
+    'IMG_0787.webp',
+    'IMG_0844.webp',
+    'IMG_0851.webp',
+    'IMG_0855.webp',
+    'IMG_0856.webp',
+    'IMG_0858.webp',
+    'IMG_0860.webp',
+    'IMG_0865.webp',
+    'IMG_0870.webp',
+    'IMG_0873.webp',
+    'IMG_0876.webp'
+  ];
+  const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
+  const src = '/img/sfondi/' + pick;
+  const preload = new Image();
+  preload.onload = () => { document.body.style.opacity = '1'; };
+  preload.onerror = () => { document.body.style.opacity = '1'; };
+  document.body.style.backgroundImage = 'url("' + src + '")';
+  preload.src = src;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Dropdown menu toggle ----------
@@ -128,16 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const fitElements = box.querySelectorAll('.fill-box__fit');
 
+      // Larghezza massima disponibile nel box (rispetta max-width su mobile)
+      const boxWidth = box.clientWidth;
+
       // Rimuove l'inline style dal ref prima di misurare: targetWidth è sempre
       // quello del CSS (0.35em tracking), stabile a ogni resize.
       ref.style.letterSpacing = '';
-      ref.style.width = 'fit-content';
-      const targetWidth = ref.scrollWidth;
+      ref.style.width = 'max-content';
+      let targetWidth = ref.scrollWidth;
       ref.style.width = '';
+
+      // Su mobile il ref potrebbe essere più largo del contenitore:
+      // limita targetWidth per evitare overflow orizzontale.
+      if (boxWidth > 0 && targetWidth > boxWidth) {
+        targetWidth = boxWidth;
+      }
 
       function adjustElement(el) {
         el.style.letterSpacing = '0px';
-        el.style.width = 'fit-content';
+        el.style.width = 'max-content';
         const naturalWidth = el.scrollWidth;
         const chars = el.textContent.length;
         if (chars > 1 && naturalWidth < targetWidth) {

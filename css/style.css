@@ -260,10 +260,11 @@ body.home {
   height: 100vh;
   min-height: 0;           /* override base min-height */
   overflow: hidden;
-  background-image: url('../img/SFONDO_HOME.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 body.home .header {
@@ -439,6 +440,10 @@ body.home .home__lang .lang--active {
   padding: var(--desktop-text-row-padding-y) 0;
   margin-bottom: 0.5em;
   display: block;
+}
+
+.studio__label--grey {
+  color: var(--color-text-light);
 }
 
 .studio__label--section-break {
@@ -679,6 +684,10 @@ body.home .home__lang .lang--active {
   margin-bottom: var(--detail-rhythm-spacing);
 }
 
+.dettaglio__desc--dark {
+  color: var(--color-text);
+}
+
 .dettaglio__block {
   display: flex;
   flex-direction: column;
@@ -695,7 +704,7 @@ body.home .home__lang .lang--active {
   text-transform: uppercase;
   line-height: var(--desktop-text-row-line-height);
   padding: var(--desktop-text-row-padding-y) 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   display: block;
 }
 
@@ -1087,6 +1096,13 @@ body.home .home__privacy a:hover {
     left: 5vw;
   }
 
+  body.home .home__privacy {
+    left: 5vw;
+    right: auto;
+    transform: none;
+    bottom: calc(var(--spacing-md) + var(--menu-font-size) * 1.8);
+  }
+
   /* -- Collezioni grid: 1 colonna su mobile -- */
   .collezioni__grid {
     grid-template-columns: 1fr;
@@ -1188,7 +1204,6 @@ body.home .home__privacy a:hover {
 
   .studio__desc {
     font-size: 0.85rem;
-    white-space: nowrap;
   }
 
   .studio__label--section-break {
