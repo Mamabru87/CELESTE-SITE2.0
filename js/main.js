@@ -5,22 +5,23 @@
 // ---------- Random home background ----------
 if (document.body.classList.contains('home')) {
   const sfondi = [
-    'Generated_Image_March_15,_2026___11_06PM.webp',
-    'Generated_Image_March_15,_2026___11_09PM.webp',
-    'Generated_Image_March_16,_2026___12_14AM.webp',
-    'IMG_0785.webp',
-    'IMG_0786.webp',
-    'IMG_0787.webp',
-    'IMG_0844.webp',
-    'IMG_0851.webp',
-    'IMG_0855.webp',
-    'IMG_0856.webp',
-    'IMG_0858.webp',
-    'IMG_0860.webp',
-    'IMG_0865.webp',
-    'IMG_0870.webp',
-    'IMG_0873.webp',
-    'IMG_0876.webp'
+    'FOTO1.png',
+    'FOTO2.png',
+    'FOTO3.png',
+    'FOTO4.png',
+    'FOTO5.png',
+    'FOTO6.png',
+    'FOTO7.png',
+    'FOTO8.png',
+    'FOTO9.png',
+    'FOTO10.png',
+    'FOTO11.png',
+    'FOTO12.png',
+    'FOTO13.png',
+    'FOTO14.png',
+    'FOTO15.png',
+    'FOTO16.png',
+    'FOTO17.png'
   ];
   const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
   const base = document.querySelector('script[src$="main.js"]').src.replace(/js\/main\.js.*$/, '');
