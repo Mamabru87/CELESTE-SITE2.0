@@ -175,6 +175,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Fill-box: adatta letter-spacing alla riga di riferimento ----------
   function applyFillBox() {
+    // Studio: equalizza la larghezza delle due colonne usando la ref più larga
+    const studioLayout = document.querySelector('.studio__layout');
+    let studioMaxRef = 0;
+    if (studioLayout) {
+      studioLayout.querySelectorAll('.fill-box').forEach(box => {
+        const ref = box.querySelector('.fill-box__ref');
+        if (!ref) return;
+        ref.style.letterSpacing = '';
+        ref.style.width = 'max-content';
+        const w = ref.scrollWidth;
+        ref.style.width = '';
+        if (w > studioMaxRef) studioMaxRef = w;
+      });
+    }
+
     document.querySelectorAll('.fill-box').forEach(box => {
       const ref = box.querySelector('.fill-box__ref');
       if (!ref) return;
@@ -195,6 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // limita targetWidth per evitare overflow orizzontale.
       if (boxWidth > 0 && targetWidth > boxWidth) {
         targetWidth = boxWidth;
+      }
+
+      // Studio: usa la ref più larga tra le due colonne
+      if (studioMaxRef > 0 && box.closest('.studio__layout')) {
+        targetWidth = Math.min(studioMaxRef, boxWidth > 0 ? boxWidth : studioMaxRef);
       }
 
       function adjustElement(el) {
