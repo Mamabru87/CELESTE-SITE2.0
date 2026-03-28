@@ -2,6 +2,19 @@
    CÉLESTE — Base Stylesheet
    ======================================== */
 
+/* ---------- Screen-reader only ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- Font ---------- */
 @font-face {
   font-family: 'Helvetica Now';
@@ -265,6 +278,10 @@ body.home {
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+body.home[data-sfondo="fiori-milano-celeste-05.png"] {
+  background-position: top right;
 }
 
 body.home .header {
@@ -759,6 +776,10 @@ body.home.home--light .home__privacy {
   margin-top: var(--detail-rhythm-spacing);
 }
 
+.dettaglio__info--delivery-first {
+  margin-top: var(--detail-rhythm-spacing);
+}
+
 .dettaglio__info {
   font-family: var(--font-body);
   font-size: 1.1rem;
@@ -1148,6 +1169,18 @@ body.home .home__privacy a:hover {
     font-size: calc(var(--menu-font-size) * 0.7);
   }
 
+  /* Sfondi home: top left su mobile per foto selezionate */
+  body.home[data-sfondo="fiori-milano-celeste-05.png"],
+  body.home[data-sfondo="fiori-milano-celeste-07.png"],
+  body.home[data-sfondo="fiori-milano-celeste-09.png"],
+  body.home[data-sfondo="fiori-milano-celeste-12.png"] {
+    background-position: top left !important;
+  }
+
+  body.home[data-sfondo="fiori-milano-celeste-06.png"] {
+    background-position: top 15% !important;
+  }
+
   /* -- Collezioni grid: 1 colonna su mobile -- */
   .collezioni__grid {
     grid-template-columns: 1fr;
@@ -1262,7 +1295,7 @@ body.home .home__privacy a:hover {
   }
 
   .studio__info {
-    margin-top: var(--mobile-after-logo-extra-gap);
+    margin-top: calc(3 * var(--spacing-lg));
   }
 
   /* -- Appuntamento -- */

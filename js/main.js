@@ -5,27 +5,36 @@
 // ---------- Random home background ----------
 if (document.body.classList.contains('home')) {
   const sfondi = [
-    'FOTO1.png',
-    'FOTO2.png',
-    'FOTO3.png',
-    'FOTO4.png',
-    'FOTO5.png',
-    'FOTO6.png',
-    'FOTO7.png',
-    'FOTO8.png',
-    'FOTO9.png',
-    'FOTO10.png',
-    'FOTO11.png',
-    'FOTO12.png',
-    'FOTO13.png',
-    'FOTO14.png',
-    'FOTO15.png',
-    'FOTO16.png',
-    'FOTO17.png'
+    'fiori-milano-celeste-01.png',
+    'fiori-milano-celeste-02.png',
+    'fiori-milano-celeste-03.png',
+    'fiori-milano-celeste-04.png',
+    'fiori-milano-celeste-05.png',
+    'fiori-milano-celeste-06.png',
+    'fiori-milano-celeste-07.png',
+    'fiori-milano-celeste-08.png',
+    'fiori-milano-celeste-09.png',
+    'fiori-milano-celeste-10.png',
+    'fiori-milano-celeste-11.png',
+    'fiori-milano-celeste-12.png',
+    'fiori-milano-celeste-13.png',
+    'fiori-milano-celeste-14.png',
+    'fiori-milano-celeste-15.png',
+    'fiori-milano-celeste-16.png',
+    'fiori-milano-celeste-17.png'
   ];
+  const cellVersions = new Set([
+    'fiori-milano-celeste-01.png','fiori-milano-celeste-02.png','fiori-milano-celeste-03.png','fiori-milano-celeste-04.png','fiori-milano-celeste-05.png',
+    'fiori-milano-celeste-06.png','fiori-milano-celeste-07.png','fiori-milano-celeste-09.png','fiori-milano-celeste-11.png','fiori-milano-celeste-12.png',
+    'fiori-milano-celeste-15.png','fiori-milano-celeste-17.png'
+  ]);
+  const isMobile = window.innerWidth <= 768;
   const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
+  const file = (isMobile && cellVersions.has(pick))
+    ? pick.replace('.png', '-cell.png')
+    : pick;
   const base = document.querySelector('script[src$="main.js"]').src.replace(/js\/main\.js.*$/, '');
-  const src = base + 'img/sfondi/' + pick;
+  const src = base + 'img/sfondi/' + file;
   const preload = new Image();
   preload.onload = () => {
     // Detect average brightness via canvas sampling
@@ -52,6 +61,7 @@ if (document.body.classList.contains('home')) {
   };
   preload.onerror = () => { document.body.style.opacity = '1'; };
   document.body.style.backgroundImage = 'url("' + src + '")';
+  document.body.dataset.sfondo = pick;
   preload.src = src;
 }
 

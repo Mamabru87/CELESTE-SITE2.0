@@ -1,11 +1,64 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CÉLESTE — Studio">
-  <title>CÉLESTE — Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="CÉLESTE studio in Milan offers Vase en Résidence, botanical art direction and bespoke floral subscriptions. Compositions by commission only.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../img/celeste-floral-studio-milano-logo.svg">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://www.celestemilano.it/en/studio.html">
+  <link rel="alternate" hreflang="it" href="https://www.celestemilano.it/studio.html">
+  <link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/studio.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/studio.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CÉLESTE">
+  <meta property="og:title" content="CÉLESTE | Floral Studio Milan | Manifesto & Services">
+  <meta property="og:description" content="CÉLESTE studio in Milan offers Vase en Résidence, botanical art direction and bespoke floral subscriptions. Compositions by commission only.">
+  <meta property="og:url" content="https://www.celestemilano.it/en/studio.html">
+  <meta property="og:image" content="https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CÉLESTE | Floral Studio Milan | Manifesto & Services">
+  <meta name="twitter:description" content="CÉLESTE studio in Milan offers Vase en Résidence, botanical art direction and bespoke floral subscriptions. Compositions by commission only.">
+  <meta name="twitter:image" content="https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano.jpg">
+
+  <title>CÉLESTE | Floral Studio Milan | Manifesto & Services</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "CÉLESTE",
+    "url": "https://www.celestemilano.it",
+    "logo": "https://www.celestemilano.it/img/celeste-floral-studio-milano-logo.svg",
+    "image": "https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano.jpg",
+    "description": "Luxury floral composition studio in Milan. Vase en Résidence, botanical art direction, subscriptions.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Milano",
+      "addressRegion": "MI",
+      "addressCountry": "IT"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "studio@celestemilano.it",
+      "telephone": "+39-338-8978782",
+      "contactType": "customer support"
+    },
+    "sameAs": ["https://www.instagram.com/celeste_milano_/"]
+  }
+  </script>
 </head>
 <body>
 
@@ -14,9 +67,9 @@
     <div class="container">
       <div class="header__row">
         <a href="../index.html" class="header__logo">
-          <img src="../img/CELESTE-LOGO.svg" alt="CÉLESTE">
+          <img src="../img/celeste-floral-studio-milano-logo.svg" alt="CÉLESTE">
         </a>
-        <button class="header__menu-toggle" id="menuToggle">Menu</button>
+        <button class="header__menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="dropdown" aria-label="Open navigation menu">Menu</button>
       </div>
 
       <div class="header__dropdown" id="dropdown">
@@ -32,12 +85,14 @@
 
   <!-- ========== MAIN ========== -->
   <main class="main-content">
+    <h1 class="sr-only">CÉLESTE Floral Studio Milan — Manifesto</h1>
     <section class="studio">
       <div class="container">
         <div class="studio__layout">
           <div class="studio__about fill-box">
-            <p class="studio__label fill-box__fit">Nature, Light, Air.</p>
-            <p class="studio__desc studio__about-section-break fill-box__fit">A botanical project founded by</p>
+            <p class="studio__label fill-box__fit">Manifesto | Bio</p>
+            <p class="studio__label studio__label--section-break fill-box__fit">NATURE.LIGHT.AIR.</p>
+            <p class="studio__desc fill-box__fit">A botanical project founded by</p>
             <p class="studio__desc fill-box__fit"><span style="color:var(--color-text)">Marco Maria Lombardi.</span></p>
             <p class="studio__desc studio__about-section-break fill-box__fit">The studio was born as an exploration</p>
             <p class="studio__desc fill-box__fit">of form, color, and matter,</p>
@@ -47,11 +102,11 @@
             <p class="studio__desc fill-box__fit">A sharp vision, capable of alternating</p>
             <p class="studio__desc fill-box__fit">between the ethereal and a bold,</p>
             <p class="studio__desc fill-box__fit">textural presence.</p>
-            <p class="studio__desc studio__about-section-break fill-box__fit"><span style="color:var(--color-text)">At C É L E S T E we follow time,</span></p>
-            <p class="studio__desc fill-box__fit"><span style="color:var(--color-text)">we do not force it. We choose only</span></p>
-            <p class="studio__desc fill-box__fit"><span style="color:var(--color-text)">seasonal flowers because beauty only</span></p>
-            <p class="studio__desc fill-box__fit"><span style="color:var(--color-text)">makes sense when it is free. Now.</span></p>
-            <p class="studio__desc studio__about-section-break fill-box__fit">With no physical location,</p>
+            <p class="studio__desc studio__about-section-break fill-box__fit">At <span style="color:var(--color-text)">C É L E S T E</span> we follow time,</p>
+            <p class="studio__desc fill-box__fit">we do not force it. We choose only</p>
+            <p class="studio__desc fill-box__fit">seasonal flowers because beauty only</p>
+            <p class="studio__desc fill-box__fit">makes sense when it is free. Now.</p>
+            <p class="studio__desc studio__about-section-break fill-box__fit">With no physical location in Milan,</p>
             <p class="studio__desc fill-box__fit"><span style="color:var(--color-text)">C É L E S T E</span> adopts a nomadic model,</p>
             <p class="studio__desc fill-box__fit">operating exclusively on commission.</p>
             <p class="studio__desc fill-box__fit">A ritual of botanical beauty,</p>
@@ -80,7 +135,7 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 CÉLESTE. All rights reserved.</p>
+      <p>&copy; 2026 CÉLESTE Milan. All rights reserved.</p>
       <p class="footer__lang"><a href="../studio.html">IT</a> / <span class="lang--active">EN</span></p>
     </div>
   </footer>
