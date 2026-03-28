@@ -1152,6 +1152,10 @@ body.home .home__privacy a:hover {
     margin-top: 0;
   }
 
+  body.home .header__nav {
+    padding-top: var(--mobile-content-offset-from-logo);
+  }
+
   body.home .home__city {
     bottom: var(--spacing-md);
     right: 5vw;
