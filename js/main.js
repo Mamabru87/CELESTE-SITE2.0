@@ -33,7 +33,7 @@ if (document.body.classList.contains('home')) {
   const file = (isMobile && cellVersions.has(pick))
     ? pick.replace('.png', '-cell.png')
     : pick;
-  const base = document.querySelector('script[src$="main.js"]').src.replace(/js\/main\.js.*$/, '');
+  const base = document.querySelector('script[src*="main.js"]').src.replace(/js\/main\.js.*$/, '');
   const src = base + 'img/sfondi/' + file;
   const preload = new Image();
   preload.onload = () => {
