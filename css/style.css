@@ -1035,6 +1035,32 @@ body.home .home__privacy a:hover {
   }
 }
 
+/* ---- Tablet portrait (iPad etc.) ---- */
+@media (max-width: 900px) {
+  .studio__layout {
+    flex-direction: column;
+    gap: calc(2 * var(--spacing-lg));
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .studio__about,
+  .studio__services {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .studio__label--section-break {
+    margin-top: var(--desktop-header-logo-height);
+  }
+
+  .studio__about-section-break {
+    margin-top: calc(var(--desktop-header-logo-height) - 0.35 * var(--menu-font-size));
+  }
+}
+
 /* ---- Mobile ---- */
 @media (max-width: 768px) {
 
