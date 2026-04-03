@@ -520,7 +520,7 @@ body.home.home--light .home__privacy {
   color: var(--color-text);
   line-height: var(--desktop-text-row-line-height);
   padding: 0;
-  margin-top: auto;
+  margin-top: var(--spacing-lg);
   margin-bottom: calc((1.7 - 1) / 2 * 1.1rem);
   display: block;
 }
@@ -1042,7 +1042,7 @@ body.home .home__privacy a:hover {
   :root {
     --spacing-lg: 2.5rem;
     --spacing-md: 1.5rem;
-    --menu-font-size: 0.75rem;
+    --menu-font-size: 0.9rem;
     --mobile-header-logo-width: clamp(160px, 55vw, 220px);
     --mobile-header-logo-height: calc(var(--mobile-header-logo-width) * 15.74 / 150.26);
     --mobile-after-logo-extra-gap: var(--mobile-header-logo-height);
@@ -1193,8 +1193,7 @@ body.home .home__privacy a:hover {
   }
 
   .collezioni__item {
-    width: min(100%, 280px);
-    max-width: 280px;
+    width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
@@ -1254,7 +1253,7 @@ body.home .home__privacy a:hover {
   .dettaglio__desc,
   .dettaglio__info,
   .dettaglio__info-link {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   /* -- Studio -- */
@@ -1284,7 +1283,7 @@ body.home .home__privacy a:hover {
   }
 
   .studio__desc {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .studio__label--section-break {
@@ -1300,12 +1299,12 @@ body.home .home__privacy a:hover {
   }
 
   .studio__info {
-    margin-top: calc(3 * var(--spacing-lg));
+    margin-top: var(--spacing-lg);
   }
 
   /* -- Appuntamento -- */
   .appuntamento__info {
-    --appuntamento-contact-font-size: 0.85rem;
+    --appuntamento-contact-font-size: 1rem;
     width: max-content;
     max-width: 100%;
     margin-left: 0;
@@ -1319,14 +1318,14 @@ body.home .home__privacy a:hover {
 
   /* -- Footer -- */
   .footer p {
-    font-size: 0.6rem;
+    font-size: 0.72rem;
   }
 }
 
 /* ---- Small phones ---- */
 @media (max-width: 400px) {
   :root {
-    --menu-font-size: 0.75rem;
+    --menu-font-size: 0.8rem;
     --mobile-header-logo-width: clamp(160px, 55vw, 220px);
     --mobile-header-logo-height: calc(var(--mobile-header-logo-width) * 15.74 / 150.26);
     --mobile-after-logo-extra-gap: var(--mobile-header-logo-height);
@@ -1352,7 +1351,7 @@ body.home .home__privacy a:hover {
   }
 
   .studio__desc {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .appuntamento__link,

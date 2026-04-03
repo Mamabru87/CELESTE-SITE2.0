@@ -29,7 +29,10 @@ if (document.body.classList.contains('home')) {
     'fiori-milano-celeste-15.png','fiori-milano-celeste-17.png'
   ]);
   const isMobile = window.innerWidth <= 768;
-  const pick = sfondi[Math.floor(Math.random() * sfondi.length)];
+  const lastIndex = parseInt(localStorage.getItem('celeste_sfondo_index') ?? '-1', 10);
+  const nextIndex = (lastIndex + 1) % sfondi.length;
+  localStorage.setItem('celeste_sfondo_index', nextIndex);
+  const pick = sfondi[nextIndex];
   const file = (isMobile && cellVersions.has(pick))
     ? pick.replace('.png', '-cell.png')
     : pick;
