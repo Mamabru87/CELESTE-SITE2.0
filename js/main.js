@@ -5,28 +5,21 @@
 // ---------- Random home background ----------
 if (document.body.classList.contains('home')) {
   const sfondi = [
-    'fiori-milano-celeste-01.png',
-    'fiori-milano-celeste-02.png',
-    'fiori-milano-celeste-03.png',
-    'fiori-milano-celeste-04.png',
-    'fiori-milano-celeste-05.png',
-    'fiori-milano-celeste-06.png',
-    'fiori-milano-celeste-07.png',
-    'fiori-milano-celeste-08.png',
-    'fiori-milano-celeste-09.png',
-    'fiori-milano-celeste-10.png',
-    'fiori-milano-celeste-11.png',
-    'fiori-milano-celeste-12.png',
-    'fiori-milano-celeste-13.png',
     'fiori-milano-celeste-14.png',
     'fiori-milano-celeste-15.png',
     'fiori-milano-celeste-16.png',
-    'fiori-milano-celeste-17.png'
+    'fiori-milano-celeste-12.png',
+    'fiori-milano-celeste-17.png',
+    'fiori-milano-celeste-11.png',
+    'fiori-milano-celeste-06.png',
+    'fiori-milano-celeste-10.png',
+    'fiori-milano-celeste-07.png',
+    'fiori-milano-celeste-09.png'
   ];
   const cellVersions = new Set([
-    'fiori-milano-celeste-01.png','fiori-milano-celeste-02.png','fiori-milano-celeste-03.png','fiori-milano-celeste-04.png','fiori-milano-celeste-05.png',
-    'fiori-milano-celeste-06.png','fiori-milano-celeste-07.png','fiori-milano-celeste-09.png','fiori-milano-celeste-11.png','fiori-milano-celeste-12.png',
-    'fiori-milano-celeste-15.png','fiori-milano-celeste-17.png'
+    'fiori-milano-celeste-15.png','fiori-milano-celeste-12.png','fiori-milano-celeste-17.png',
+    'fiori-milano-celeste-11.png','fiori-milano-celeste-06.png','fiori-milano-celeste-07.png',
+    'fiori-milano-celeste-09.png'
   ]);
   const isMobile = window.innerWidth <= 768;
   const lastIndex = parseInt(localStorage.getItem('celeste_sfondo_index') ?? '-1', 10);
