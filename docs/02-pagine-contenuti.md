@@ -31,8 +31,7 @@ Ruolo: indice delle collezioni.
 Collezioni presenti:
 
 1. `Aria` → `aria.html`
-2. `Metallo` → `metallo.html`
-3. `Moiré` → `moire.html`
+2. `Moiré` → `moire.html`
 
 Struttura di ogni card:
 
@@ -43,14 +42,13 @@ Struttura di ogni card:
 Copy attuale verificato:
 
 - `Aria` → `Romantico, etereo, leggero.`
-- `Metallo` → `Geometrico, materico, natura morta.`
 - `Moiré` → `Istintivo, creativo, a sorpresa.`
 
 Nota pratica:
 
 - su mobile la griglia diventa a una colonna e l'immagine non viene croppata: usa `object-fit: contain`.
 
-## Pagine dettaglio — `aria.html`, `metallo.html`, `moire.html`
+## Pagine dettaglio — `aria.html`, `moire.html`
 
 Ruolo: presentazione delle singole collezioni.
 
@@ -66,12 +64,6 @@ Struttura comune:
 #### Aria
 
 - `Romantico, etereo, leggero.`
-- `Foto mostrata nella taglia piccolo.`
-- `Il tuo bouquet potrebbe differire da quello in foto.`
-
-#### Metallo
-
-- `Geometrico, materico, natura morta.`
 - `Foto mostrata nella taglia piccolo.`
 - `Il tuo bouquet potrebbe differire da quello in foto.`
 

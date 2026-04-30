@@ -28,7 +28,7 @@ Non vanno “normalizzati” senza controllo visivo.
 
 ### 4. Pagine dettaglio sincronizzate
 
-`aria.html`, `metallo.html` e `moire.html` sono sorelle strette: modificare una sola pagina è il modo più rapido per creare inconsistenze.
+`aria.html` e `moire.html` sono sorelle strette: modificare una sola pagina è il modo più rapido per creare inconsistenze.
 
 ### 5. Mobile come derivazione del desktop
 
@@ -80,7 +80,7 @@ Controllare sempre:
 - [ ] I link del menu puntano alle pagine giuste?
 - [ ] La home mantiene la resa full-screen desiderata?
 - [ ] Il logo resta leggibile su home e pagine interne?
-- [ ] `aria`, `metallo` e `moire` sono coerenti tra loro?
+- [ ] `aria` e `moire` sono coerenti tra loro?
 - [ ] I toggle delle taglie funzionano ancora?
 - [ ] Il `fill-box` continua ad allineare bene i testi?
 - [ ] Le righe non si rompono male su mobile?

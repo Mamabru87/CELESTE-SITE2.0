@@ -18,7 +18,6 @@ appuntamento.html
 aria.html
 collezioni.html
 index.html
-metallo.html
 moire.html
 studio.html
 README.md
@@ -31,7 +30,6 @@ img/
   ARIA.png
   CELESTE-LOGO.svg
   INFO.svg
-  METALLO.png
   moirè.png
   REF_PROPORZIONI_LOGO.png
   SFONDO_HOME.png
@@ -43,7 +41,7 @@ js/
 
 - `index.html` → landing/cover del brand.
 - `collezioni.html` → griglia delle tre collezioni.
-- `aria.html`, `metallo.html`, `moire.html` → pagine dettaglio strutturalmente quasi gemelle.
+- `aria.html`, `moire.html` → pagine dettaglio strutturalmente quasi gemelle.
 - `studio.html` → presentazione servizi.
 - `appuntamento.html` → pagina contatti.
 - `css/style.css` → palette, tipografia, header, layout, responsive, dettaglio, home.
@@ -94,7 +92,7 @@ va aggiornato manualmente in ogni pagina.
 
 ### Gruppo “collezioni”
 
-- `collezioni.html` linka a `aria.html`, `metallo.html`, `moire.html`.
+- `collezioni.html` linka a `aria.html`, `moire.html`.
 - Le tre pagine dettaglio condividono:
   - stessa architettura;
   - stessi prezzi;

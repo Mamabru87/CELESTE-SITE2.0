@@ -29,15 +29,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Metallo -->
-  <url>
-    <loc>https://www.celestemilano.it/metallo.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/metallo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/metallo.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Moiré -->
   <url>
     <loc>https://www.celestemilano.it/moire.html</loc>
@@ -88,15 +79,6 @@
     <loc>https://www.celestemilano.it/en/aria.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/aria.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/aria.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- EN Metallo -->
-  <url>
-    <loc>https://www.celestemilano.it/en/metallo.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/metallo.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/metallo.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

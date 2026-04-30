@@ -54,7 +54,6 @@ appuntamento.html
 aria.html
 collezioni.html
 index.html
-metallo.html
 moire.html
 studio.html
 css/
@@ -65,7 +64,6 @@ img/
   ARIA.png
   CELESTE-LOGO.svg
   INFO.svg
-  METALLO.png
   moirè.png
   REF_PROPORZIONI_LOGO.png
   SFONDO_HOME.png
@@ -78,7 +76,6 @@ js/
 - `index.html` → home page essenziale con logo e menu su sfondo fotografico.
 - `collezioni.html` → griglia delle collezioni con link ai dettagli.
 - `aria.html` → pagina dettaglio collezione Aria.
-- `metallo.html` → pagina dettaglio collezione Metallo.
 - `moire.html` → pagina dettaglio collezione Moiré.
 - `studio.html` → pagina di presentazione servizi / studio.
 - `appuntamento.html` → pagina contatti e prenotazione.
@@ -158,8 +155,7 @@ Struttura:
 Collezioni attuali:
 
 1. **Aria** → `aria.html`
-2. **Metallo** → `metallo.html`
-3. **Moiré** → `moire.html`
+2. **Moiré** → `moire.html`
 
 Contenuto per card:
 
@@ -179,7 +175,7 @@ Note importanti:
 - le immagini delle collezioni sono molto pesanti in rapporto alla semplicità della pagina;
 - attualmente non c'è hover elaborato, animazione o lazy loading.
 
-### 4.3 `aria.html`, `metallo.html`, `moire.html`
+### 4.3 `aria.html`, `moire.html`
 
 Ruolo: pagine di dettaglio di ciascuna collezione.
 
@@ -238,7 +234,6 @@ Note importanti:
 Differenze contenutistiche tra collezioni:
 
 - **Aria** → tono romantico, etereo, leggero.
-- **Metallo** → tono geometrico, materico, natura morta.
 - **Moiré** → tono istintivo, creativo, a sorpresa.
 
 ### 4.4 `studio.html`
@@ -487,7 +482,6 @@ Quindi questa parte di script oggi è **inattiva / preparata per futuro uso / re
 
 - `img/SFONDO_HOME.png` → circa `38.968.900 B` (~39 MB)
 - `img/ARIA.png` → circa `9.556.081 B` (~9.6 MB)
-- `img/METALLO.png` → circa `9.513.376 B` (~9.5 MB)
 - `img/moirè.png` → circa `9.369.004 B` (~9.4 MB)
 
 ### 7.3 Asset secondari
@@ -567,7 +561,7 @@ Non è testo spezzato per caso: fa parte del layout tipografico.
 
 ### 9.4 Le pagine dettaglio sono molto ridondanti
 
-`aria.html`, `metallo.html`, `moire.html` hanno struttura quasi uguale.  
+`aria.html`, `moire.html` hanno struttura quasi uguale.  
 Se si fanno cambi globali al layout dettaglio, conviene applicarli a tutte e tre insieme.
 
 ### 9.5 Prestazioni immagine
@@ -648,7 +642,7 @@ Quando si interviene sul progetto, seguire idealmente questo ordine mentale:
 1. capire se la modifica è **globale** o **locale**;
 2. verificare se impatta header/footer/menu;
 3. verificare se impatta il sistema `fill-box`;
-4. verificare se tocca più pagine gemelle (`aria`, `metallo`, `moire`);
+4. verificare se tocca più pagine gemelle (`aria`, `moire`);
 5. controllare il comportamento su mobile;
 6. controllare se il peso degli asset può peggiorare o migliorare.
 
@@ -685,7 +679,7 @@ Usare questa checklist come mini protocollo operativo:
 - [ ] I link del menu puntano alle pagine giuste?
 - [ ] La home mantiene la resa full-screen desiderata?
 - [ ] Il logo resta leggibile su home e pagine interne?
-- [ ] Le pagine `aria`, `metallo`, `moire` sono coerenti tra loro?
+- [ ] Le pagine `aria`, `moire` sono coerenti tra loro?
 - [ ] I toggle delle taglie mostrano ancora correttamente i prezzi?
 - [ ] Il sistema `fill-box` continua ad allineare bene i testi?
 - [ ] Le righe non si rompono male su mobile?
@@ -789,7 +783,7 @@ Da qui in avanti conviene aggiornare questa sezione a ogni intervento importante
 Se un'AI deve lavorare velocemente su questo repository, deve sapere subito questo:
 
 - è un **sito statico** senza framework;
-- i file chiave sono `index.html`, `collezioni.html`, `studio.html`, `appuntamento.html`, `aria.html`, `metallo.html`, `moire.html`, `css/style.css`, `js/main.js`;
+- i file chiave sono `index.html`, `collezioni.html`, `studio.html`, `appuntamento.html`, `aria.html`, `moire.html`, `css/style.css`, `js/main.js`;
 - c'è **un solo font locale**: `HelveticaNowVar.ttf`;
 - la home usa uno **sfondo PNG molto pesante**;
 - il mobile usa una famiglia di variabili proporzionali derivate dal logo per preservare il rapporto tra header, menu e contenuto;

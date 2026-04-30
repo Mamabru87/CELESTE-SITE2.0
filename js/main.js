@@ -229,8 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const naturalWidth = el.scrollWidth;
         const chars = el.textContent.length;
         if (chars > 1 && naturalWidth < targetWidth) {
-          const extra = (targetWidth - naturalWidth) / (chars - 1);
+          let extra = (targetWidth - naturalWidth) / (chars - 1);
           el.style.letterSpacing = extra + 'px';
+          // Correzione iterativa: span interni con letter-spacing inline non
+          // ereditano il valore del genitore, quindi la larghezza reale può
+          // essere inferiore al target. Ricalibra in base alle gap responsive.
+          const actual = el.scrollWidth;
+          if (actual < targetWidth - 0.5 && actual > naturalWidth) {
+            const responsiveGaps = (actual - naturalWidth) / extra;
+            if (responsiveGaps > 0) {
+              extra = (targetWidth - naturalWidth) / responsiveGaps;
+              el.style.letterSpacing = extra + 'px';
+            }
+          }
         } else {
           el.style.letterSpacing = '0px';
         }

@@ -21,7 +21,6 @@ Questo file serve da hub rapido: se in futuro vuoi chiedere una modifica precisa
 index.html            → home / cover page
 collezioni.html       → indice collezioni
 aria.html             → dettaglio collezione Aria
-metallo.html          → dettaglio collezione Metallo
 moire.html            → dettaglio collezione Moiré
 studio.html           → servizi / studio
 appuntamento.html     → contatti / prenotazione
@@ -44,7 +43,7 @@ Controlli effettuati sul repository attuale:
 
 - Il progetto è **statico**: niente build, niente componenti, niente bundler.
 - `header` e `footer` sono duplicati nelle pagine HTML interne.
-- Le tre pagine dettaglio (`aria`, `metallo`, `moire`) vanno trattate come un piccolo gruppo sincronizzato.
+- Le due pagine dettaglio (`aria`, `moire`) vanno trattate come un piccolo gruppo sincronizzato.
 - Le immagini principali sono il collo di bottiglia tecnico più evidente.
 - Il sistema `fill-box` è il punto più sensibile dal lato tipografico.
 

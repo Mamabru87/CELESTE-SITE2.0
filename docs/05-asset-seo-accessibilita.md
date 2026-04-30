@@ -10,7 +10,6 @@ Dimensioni rilevate direttamente nel repository:
 | --- | ---: | ---: |
 | `img/SFONDO_HOME.png` | 38,968,900 | 37.16 |
 | `img/ARIA.png` | 9,556,081 | 9.11 |
-| `img/METALLO.png` | 9,513,376 | 9.07 |
 | `img/moirè.png` | 9,369,004 | 8.93 |
 | `img/CELESTE-LOGO.svg` | 2,467 | ~0.00 |
 | `img/INFO.svg` | 28,295 | 0.03 |
