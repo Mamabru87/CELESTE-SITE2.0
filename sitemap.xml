@@ -110,4 +110,22 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Privacy -->
+  <url>
+    <loc>https://www.celestemilano.it/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- EN Privacy -->
+  <url>
+    <loc>https://www.celestemilano.it/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

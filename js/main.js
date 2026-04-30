@@ -122,22 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---------- Accordion "Come funziona" ----------
-  const comeFunziona = document.getElementById('comeFunziona');
-  const comeFunzionaContent = document.getElementById('comeFunzionaContent');
-
-  if (comeFunziona && comeFunzionaContent) {
-    comeFunziona.addEventListener('click', () => {
-      comeFunzionaContent.classList.toggle('open');
-      // Aggiorna testo (+) / (−)
-      if (comeFunzionaContent.classList.contains('open')) {
-        comeFunziona.textContent = 'Come funziona (−)';
-      } else {
-        comeFunziona.textContent = 'Come funziona (+)';
-      }
-    });
-  }
-
   // ---------- Size / Price toggle ----------
   const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
