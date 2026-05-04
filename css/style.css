@@ -871,6 +871,7 @@ body.home.home--light .home__privacy {
   letter-spacing: 0.35em;
   font-weight: 400;
   font-size: var(--menu-font-size);
+  margin-left: 0.35em;
 }
 
 .dettaglio__tagline {
@@ -950,6 +951,9 @@ body.home.home--light .home__privacy {
 .size-toggle--price {
   letter-spacing: 0 !important;
   text-transform: none !important;
+  font-size: 1.1rem !important;
+  font-weight: 300 !important;
+  font-family: var(--font-body) !important;
 }
 
 .dettaglio__info-link {
