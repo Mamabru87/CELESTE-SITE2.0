@@ -137,11 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (supportsHover) {
       span.addEventListener('mouseenter', () => {
-        // Blocca la larghezza alla misura attuale (label) per evitare
-        // che lo swap a "130€" restringa il box e causi flicker hover.
-        span.style.display = 'inline-block';
-        span.style.minWidth = span.getBoundingClientRect().width + 'px';
-        span.style.textAlign = 'left';
         span.textContent = span.dataset.price;
         span.classList.add('size-toggle--price');
       });

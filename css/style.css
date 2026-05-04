@@ -360,6 +360,12 @@ body.home[data-sfondo="fiori-milano-celeste-12-cell.webp"] .header__menu-toggle 
   color: var(--color-text);
 }
 
+/* Sfondo 09: MENÙ in nero */
+body.home[data-sfondo="fiori-milano-celeste-09.webp"] .header__menu-toggle,
+body.home[data-sfondo="fiori-milano-celeste-09.webp"] .header__nav a {
+  color: var(--color-text);
+}
+
 /* Sfondo 12: voci del menu in bianco (toggle resta nero sopra) */
 body.home[data-sfondo="fiori-milano-celeste-12.webp"] .header__nav a,
 body.home[data-sfondo="fiori-milano-celeste-12-cell.webp"] .header__nav a {
@@ -946,6 +952,9 @@ body.home.home--light .home__privacy {
 .size-toggle {
   cursor: pointer;
   transition: opacity var(--transition-fast);
+  display: inline-block;
+  padding: 0 0.3em;
+  margin: 0 -0.3em;
 }
 
 .size-toggle:hover {
@@ -953,11 +962,11 @@ body.home.home--light .home__privacy {
 }
 
 .size-toggle--price {
-  letter-spacing: 0 !important;
   text-transform: none !important;
-  font-size: 1.1rem !important;
-  font-weight: 300 !important;
-  font-family: var(--font-body) !important;
+  font-size: var(--menu-font-size) !important;
+  font-weight: 400 !important;
+  font-family: var(--font-heading) !important;
+  letter-spacing: 0.35em !important;
 }
 
 .dettaglio__info-link {
