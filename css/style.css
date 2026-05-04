@@ -745,6 +745,10 @@ body.home.home--light .home__privacy {
   object-position: center;
 }
 
+.collezioni__item:first-child .collezioni__img img {
+  object-position: center 25%;
+}
+
 .collezioni__name {
   font-family: var(--font-heading);
   font-size: var(--menu-font-size);
@@ -1386,6 +1390,7 @@ body.home .home__privacy a:hover {
   .collezioni__img picture {
     width: 100%;
     height: auto;
+    aspect-ratio: auto;
   }
 
   .collezioni__img img {
@@ -1416,10 +1421,15 @@ body.home .home__privacy a:hover {
   .dettaglio__img {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--spacing-lg);
   }
 
   .dettaglio__figure {
     width: 100%;
+  }
+
+  .dettaglio__caption {
+    margin-top: 4px;
   }
 
   .dettaglio__figure picture {
@@ -1452,6 +1462,14 @@ body.home .home__privacy a:hover {
   .dettaglio__info,
   .dettaglio__info-link {
     font-size: 1rem;
+  }
+
+  /* -- Mobile: testi descrittivi attaccati alla foto -- */
+  .collezioni__desc {
+    margin-top: 4px;
+  }
+  .collezioni__price {
+    margin-top: 2px;
   }
 
   /* -- Studio -- */
