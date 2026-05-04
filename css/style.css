@@ -733,12 +733,16 @@ body.home.home--light .home__privacy {
 .collezioni__img picture {
   display: block;
   width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
 }
 
 .collezioni__img img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .collezioni__name {
@@ -794,9 +798,9 @@ body.home.home--light .home__privacy {
 }
 
 .dettaglio__layout {
-  width: 100%;
+  width: max-content;
+  max-width: 100%;
   min-width: 0;
-  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -817,10 +821,11 @@ body.home.home--light .home__privacy {
 .dettaglio__img {
   display: flex;
   gap: var(--spacing-sm);
-  width: 100%;
+  width: max-content;
+  max-width: 100%;
   margin-bottom: var(--detail-rhythm-spacing);
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
 }
 
@@ -851,11 +856,11 @@ body.home.home--light .home__privacy {
 .dettaglio__caption {
   margin: var(--spacing-xs) 0 0;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   color: var(--color-text-light);
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: left;
 }
 
@@ -865,6 +870,7 @@ body.home.home--light .home__privacy {
   text-transform: uppercase;
   letter-spacing: 0.35em;
   font-weight: 400;
+  font-size: var(--menu-font-size);
 }
 
 .dettaglio__tagline {
@@ -1370,11 +1376,13 @@ body.home .home__privacy a:hover {
 
   .collezioni__img picture {
     width: 100%;
+    height: auto;
   }
 
   .collezioni__img img {
     width: 100%;
     height: auto;
+    object-fit: initial;
   }
 
   .studio .container,
@@ -1430,14 +1438,8 @@ body.home .home__privacy a:hover {
   .collezioni__desc,
   .collezioni__price,
   .dettaglio__desc,
-  .dettaglio__caption {
-    font-size: 1.15rem;
-  }
-
-  .dettaglio__tagline {
-    font-size: 1.2rem;
-  }
-
+  .dettaglio__caption,
+  .dettaglio__tagline,
   .dettaglio__info,
   .dettaglio__info-link {
     font-size: 1rem;
@@ -1529,14 +1531,8 @@ body.home .home__privacy a:hover {
   .collezioni__desc,
   .collezioni__price,
   .dettaglio__desc,
-  .dettaglio__caption {
-    font-size: 1rem;
-  }
-
-  .dettaglio__tagline {
-    font-size: 1.05rem;
-  }
-
+  .dettaglio__caption,
+  .dettaglio__tagline,
   .dettaglio__info,
   .dettaglio__info-link {
     font-size: 0.9rem;
