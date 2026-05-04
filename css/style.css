@@ -285,6 +285,11 @@ body.home[data-sfondo="fiori-milano-celeste-05.png"] {
   background-position: top right;
 }
 
+/* Volpe blu (immagine portrait): sposta verticalmente per centrare il soggetto su desktop */
+body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] {
+  background-position: center 60%;
+}
+
 body.home .header {
   --home-logo-width: 300px;
   --home-logo-height: calc(var(--home-logo-width) * 15.74 / 150.26);
@@ -347,6 +352,31 @@ body.home .header__nav a {
 
 body.home .header__nav a:hover {
   opacity: 0.5;
+}
+
+/* Sfondi chiari: menu nero (logo resta bianco) */
+body.home[data-sfondo="fiori-milano-celeste-12.png"] .header__menu-toggle,
+body.home[data-sfondo="fiori-milano-celeste-12-cell.png"] .header__menu-toggle {
+  color: var(--color-text);
+}
+
+/* Sfondo 12: voci del menu in bianco (toggle resta nero sopra) */
+body.home[data-sfondo="fiori-milano-celeste-12.png"] .header__nav a,
+body.home[data-sfondo="fiori-milano-celeste-12-cell.png"] .header__nav a {
+  color: var(--color-white);
+}
+
+/* Sfondo volpe: logo + menu + voci menu in nero */
+body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .header__menu-toggle,
+body.home[data-sfondo="fiori-milano-celeste-volpe-cell.webp"] .header__menu-toggle,
+body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .header__nav a,
+body.home[data-sfondo="fiori-milano-celeste-volpe-cell.webp"] .header__nav a {
+  color: var(--color-text);
+}
+
+body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .header__logo img,
+body.home[data-sfondo="fiori-milano-celeste-volpe-cell.webp"] .header__logo img {
+  filter: none;
 }
 
 body.home .home__city {
@@ -535,6 +565,56 @@ body.home.home--light .home__privacy {
   color: var(--color-text-light);
 }
 
+.studio__info-menu {
+  margin-top: var(--spacing-lg);
+  font-family: var(--font-heading);
+  font-size: var(--menu-font-size);
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  line-height: var(--desktop-text-row-line-height);
+}
+
+.studio__info-menu summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.studio__info-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.studio__info-menu summary:hover {
+  color: var(--color-text-light);
+}
+
+.studio__info-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-sm) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.studio__info-list a {
+  font-family: var(--font-heading);
+  font-size: var(--menu-font-size);
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.studio__info-list a:hover {
+  color: var(--color-text-light);
+}
+
 /* ============================================
    APPUNTAMENTO PAGE
    ============================================ */
@@ -647,17 +727,17 @@ body.home.home--light .home__privacy {
 
 .collezioni__img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+}
+
+.collezioni__img picture {
+  display: block;
+  width: 100%;
 }
 
 .collezioni__img img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
@@ -681,27 +761,41 @@ body.home.home--light .home__privacy {
   letter-spacing: 0.04em;
   color: var(--color-text-light);
   line-height: 1.6;
-  margin-bottom: var(--collections-text-image-gap);
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.collezioni__price {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+  text-align: left;
 }
 
 /* ============================================
    DETTAGLIO (pagina singola collezione)
    ============================================ */
 .dettaglio {
-  padding: var(--desktop-content-offset-from-logo) var(--desktop-content-safe-right) var(--spacing-lg) var(--desktop-content-safe-left);
+  padding: var(--desktop-content-offset-from-logo) var(--desktop-content-safe-right) var(--spacing-lg) var(--desktop-content-safe-right);
 }
 
 .dettaglio .container {
   width: 100%;
-  max-width: 720px;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
-  transform: translateX(var(--desktop-content-center-compensation));
+  transform: none;
 }
 
 .dettaglio__layout {
-  width: 75%;
-  min-width: 600px;
+  width: 100%;
+  min-width: 0;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -739,7 +833,7 @@ body.home.home--light .home__privacy {
 
 .dettaglio__figure picture {
   display: block;
-  height: clamp(220px, 38vh, 420px);
+  height: clamp(286px, 49.4vh, 546px);
 }
 
 .dettaglio__content {
@@ -751,7 +845,7 @@ body.home.home--light .home__privacy {
   width: auto;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .dettaglio__caption {
@@ -768,6 +862,9 @@ body.home.home--light .home__privacy {
 .dettaglio__caption .size-toggle {
   cursor: pointer;
   color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-weight: 400;
 }
 
 .dettaglio__tagline {
@@ -1245,7 +1342,7 @@ body.home .home__privacy a:hover {
 
   /* Sfondi home: top left su mobile per foto selezionate */
   body.home[data-sfondo="fiori-milano-celeste-05.png"],
-  body.home[data-sfondo="fiori-milano-celeste-07.png"],
+  body.home[data-sfondo="fiori-milano-celeste-07.webp"],
   body.home[data-sfondo="fiori-milano-celeste-09.png"],
   body.home[data-sfondo="fiori-milano-celeste-12.png"] {
     background-position: top left !important;
@@ -1269,14 +1366,15 @@ body.home .home__privacy a:hover {
 
   .collezioni__img {
     width: 100%;
-    aspect-ratio: auto;
-    overflow: visible;
+  }
+
+  .collezioni__img picture {
+    width: 100%;
   }
 
   .collezioni__img img {
     width: 100%;
     height: auto;
-    object-fit: contain;
   }
 
   .studio .container,
@@ -1330,6 +1428,7 @@ body.home .home__privacy a:hover {
   }
 
   .collezioni__desc,
+  .collezioni__price,
   .dettaglio__desc,
   .dettaglio__caption {
     font-size: 1.15rem;
@@ -1428,6 +1527,7 @@ body.home .home__privacy a:hover {
   }
 
   .collezioni__desc,
+  .collezioni__price,
   .dettaglio__desc,
   .dettaglio__caption {
     font-size: 1rem;
