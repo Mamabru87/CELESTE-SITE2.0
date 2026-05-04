@@ -31,7 +31,7 @@ if (document.body.classList.contains('home')) {
     ? pick.replace(/\.(png|webp|jpe?g)$/i, '-cell.$1')
     : pick;
   const base = document.querySelector('script[src*="main.js"]').src.replace(/js\/main\.js.*$/, '');
-  const src = base + 'img/sfondi/' + file + '?v=17';
+  const src = base + 'img/sfondi/' + file + '?v=18';
   const preload = new Image();
   preload.onload = () => {
     // Detect average brightness via canvas sampling
