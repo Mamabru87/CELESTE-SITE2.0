@@ -14,13 +14,12 @@ if (document.body.classList.contains('home')) {
     'fiori-milano-celeste-06.webp',
     'fiori-milano-celeste-10.webp',
     'fiori-milano-celeste-07.webp',
-    'fiori-milano-celeste-09.webp',
     'fiori-milano-celeste-volpe.webp'
   ];
   const cellVersions = new Set([
-    'fiori-milano-celeste-15.webp','fiori-milano-celeste-12.webp','fiori-milano-celeste-17.webp',
-    'fiori-milano-celeste-11.webp','fiori-milano-celeste-06.webp','fiori-milano-celeste-07.webp',
-    'fiori-milano-celeste-09.webp'
+    'fiori-milano-celeste-15.webp','fiori-milano-celeste-16.webp','fiori-milano-celeste-12.webp',
+    'fiori-milano-celeste-17.webp','fiori-milano-celeste-11.webp','fiori-milano-celeste-06.webp',
+    'fiori-milano-celeste-07.webp','fiori-milano-celeste-volpe.webp'
   ]);
   const isMobile = window.innerWidth <= 768;
   const lastIndex = parseInt(localStorage.getItem('celeste_sfondo_index') ?? '-1', 10);
@@ -31,7 +30,7 @@ if (document.body.classList.contains('home')) {
     ? pick.replace(/\.(png|webp|jpe?g)$/i, '-cell.$1')
     : pick;
   const base = document.querySelector('script[src*="main.js"]').src.replace(/js\/main\.js.*$/, '');
-  const src = base + 'img/sfondi/' + file + '?v=18';
+  const src = base + 'img/sfondi/' + file + '?v=20';
   const preload = new Image();
   preload.onload = () => {
     // Detect average brightness via canvas sampling
@@ -56,7 +55,11 @@ if (document.body.classList.contains('home')) {
     } catch (_) { /* cross-origin or canvas error: keep default white text */ }
     document.body.style.opacity = '1';
   };
-  preload.onerror = () => { document.body.style.opacity = '1'; };
+  preload.onerror = () => {
+    document.body.style.backgroundColor = '#1a1a1a';
+    document.body.style.opacity = '1';
+    console.warn('[CELESTE] Sfondo non trovato:', src);
+  };
   document.body.style.backgroundImage = 'url("' + src + '")';
   document.body.dataset.sfondo = pick;
   preload.src = src;
