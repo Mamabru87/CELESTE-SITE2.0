@@ -947,6 +947,11 @@ body.home.home--light .home__privacy {
   opacity: 0.5;
 }
 
+.size-toggle--price {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
 .dettaglio__info-link {
   font-family: var(--font-body);
   font-size: 1.1rem;

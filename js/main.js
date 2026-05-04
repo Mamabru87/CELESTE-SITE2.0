@@ -137,13 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (supportsHover) {
       span.addEventListener('mouseenter', () => {
+        // Blocca la larghezza alla misura attuale (label) per evitare
+        // che lo swap a "130€" restringa il box e causi flicker hover.
+        span.style.display = 'inline-block';
+        span.style.minWidth = span.getBoundingClientRect().width + 'px';
+        span.style.textAlign = 'center';
         span.textContent = span.dataset.price;
-        document.fonts.ready.then(applyFillBox);
+        span.classList.add('size-toggle--price');
       });
 
       span.addEventListener('mouseleave', () => {
         span.textContent = span.dataset.label;
-        document.fonts.ready.then(applyFillBox);
+        span.classList.remove('size-toggle--price');
       });
 
       return;
@@ -155,12 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isShowingPrice) {
         span.textContent = span.dataset.label;
+        span.classList.remove('size-toggle--price');
       } else {
         resetSizeRow(row);
+        row.querySelectorAll('.size-toggle').forEach(s => s.classList.remove('size-toggle--price'));
         span.textContent = span.dataset.price;
+        span.classList.add('size-toggle--price');
       }
-
-      document.fonts.ready.then(applyFillBox);
     });
   });
 
