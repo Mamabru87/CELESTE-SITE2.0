@@ -1474,6 +1474,17 @@ body.home .home__privacy a:hover {
     z-index: 1003;
   }
 
+  /* Mobile: bottone MENÙ diventa bianco quando passa sopra un'immagine */
+  body.menu-over-image .header__menu-toggle {
+    color: var(--color-white);
+    transition: color 0.15s ease;
+  }
+  /* Quando il dropdown è aperto come pannello bianco, riporta il bottone a nero */
+  body.menu-over-image.scrolled:not(.home) .header__dropdown.open ~ .header__menu-toggle,
+  body.menu-over-image.scrolled:not(.home) .header__menu-toggle[aria-expanded="true"] {
+    color: var(--color-text);
+  }
+
   /* -- Nav dropdown: colonna verticale su mobile -- */
   .header__nav {
     flex-direction: column;

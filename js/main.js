@@ -92,6 +92,40 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateScrolled, { passive: true });
   }
 
+  // Mobile: cambia colore del bottone MENÙ in bianco quando si sovrappone a un'immagine
+  if (!document.body.classList.contains('home') && menuToggle) {
+    let mobileColorRaf = 0;
+    const updateMenuOverImage = () => {
+      mobileColorRaf = 0;
+      if (window.innerWidth > 768) {
+        document.body.classList.remove('menu-over-image');
+        return;
+      }
+      const tr = menuToggle.getBoundingClientRect();
+      const imgs = document.querySelectorAll('main img, .dettaglio img, .collezioni img, .studio img, .appuntamento img, picture img');
+      let over = false;
+      for (const img of imgs) {
+        const ir = img.getBoundingClientRect();
+        if (ir.width === 0 || ir.height === 0) continue;
+        if (ir.bottom < 0 || ir.top > window.innerHeight) continue;
+        if (tr.right > ir.left && tr.left < ir.right &&
+            tr.bottom > ir.top && tr.top < ir.bottom) {
+          over = true;
+          break;
+        }
+      }
+      document.body.classList.toggle('menu-over-image', over);
+    };
+    const scheduleUpdate = () => {
+      if (mobileColorRaf) return;
+      mobileColorRaf = requestAnimationFrame(updateMenuOverImage);
+    };
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('load', scheduleUpdate);
+    scheduleUpdate();
+  }
+
   function openMenu() {
     dropdown.classList.add('open');
     document.body.classList.add('menu-open');
@@ -130,8 +164,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isInCollezioni) {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          const isOpen = submenu.classList.toggle('open');
-          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          // Se il submenu è già aperto, naviga alla pagina collezioni
+          if (submenu.classList.contains('open')) {
+            window.location.href = 'collezioni.html';
+            return;
+          }
+          submenu.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
         });
       } else {
         // Naviga diretto a collezioni.html, niente submenu
