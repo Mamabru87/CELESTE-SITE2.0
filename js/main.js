@@ -126,48 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---------- Size / Price toggle ----------
-  const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-  function resetSizeRow(row) {
-    row.querySelectorAll('.size-toggle').forEach(s => {
-      s.textContent = s.dataset.label;
-    });
-  }
-
-  document.querySelectorAll('.size-toggle').forEach(span => {
-    span.dataset.label = span.textContent.trim();
-
-    if (supportsHover) {
-      span.addEventListener('mouseenter', () => {
-        span.textContent = span.dataset.price;
-        span.classList.add('size-toggle--price');
-      });
-
-      span.addEventListener('mouseleave', () => {
-        span.textContent = span.dataset.label;
-        span.classList.remove('size-toggle--price');
-      });
-
-      return;
-    }
-
-    span.addEventListener('click', () => {
-      const row = span.closest('.dettaglio__sizes');
-      const isShowingPrice = span.textContent === span.dataset.price;
-
-      if (isShowingPrice) {
-        span.textContent = span.dataset.label;
-        span.classList.remove('size-toggle--price');
-      } else {
-        resetSizeRow(row);
-        row.querySelectorAll('.size-toggle').forEach(s => s.classList.remove('size-toggle--price'));
-        span.textContent = span.dataset.price;
-        span.classList.add('size-toggle--price');
-      }
-    });
-  });
-
   // ---------- Fill-box: adatta letter-spacing alla riga di riferimento ----------
   function applyFillBox() {
     // Studio: equalizza la larghezza delle due colonne usando la ref più larga
