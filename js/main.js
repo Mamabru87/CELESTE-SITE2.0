@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown.classList.remove('open');
     document.body.classList.remove('menu-open');
     menuToggle.setAttribute('aria-expanded', 'false');
+    // Reset submenu
+    dropdown.querySelectorAll('.header__submenu.open').forEach(s => s.classList.remove('open'));
+    dropdown.querySelectorAll('.header__nav-toggle[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded', 'false'));
   }
 
   if (menuToggle && dropdown) {
@@ -113,6 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Chiudi il menu quando si clicca un link
     dropdown.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => closeMenu());
+    });
+
+    // Submenu (Collezioni → Tutte / Aria / Moiré)
+    dropdown.querySelectorAll('.header__nav-toggle').forEach(btn => {
+      const submenu = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!submenu) return;
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = submenu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
     });
 
     // Chiudi con tasto ESC
