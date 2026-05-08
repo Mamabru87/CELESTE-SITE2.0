@@ -118,15 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => closeMenu());
     });
 
-    // Submenu (Collezioni → Tutte / Aria / Moiré)
+    // Submenu Collezioni: comportamento condizionale.
+    // Solo nelle pagine "dentro collezioni" (collezioni.html, aria.html, moire.html)
+    // il click apre il sotto-menu Aria/Moiré. Altrove naviga direttamente a collezioni.html.
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const isInCollezioni = /^(collezioni|aria|moire)\.html$/.test(path);
+
     dropdown.querySelectorAll('.header__nav-toggle').forEach(btn => {
       const submenu = document.getElementById(btn.getAttribute('aria-controls'));
       if (!submenu) return;
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = submenu.classList.toggle('open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
+      if (isInCollezioni) {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = submenu.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      } else {
+        // Naviga diretto a collezioni.html, niente submenu
+        submenu.setAttribute('hidden', '');
+        btn.removeAttribute('aria-controls');
+        btn.removeAttribute('aria-expanded');
+        btn.addEventListener('click', () => {
+          window.location.href = 'collezioni.html';
+        });
+      }
     });
 
     // Chiudi con tasto ESC
