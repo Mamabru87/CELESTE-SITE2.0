@@ -71,13 +71,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const dropdown   = document.getElementById('dropdown');
 
+  // Aggiunge classe "scrolled" sul body quando l'utente scrolla giù
+  // così il menu cambia stile (pannello bianco fisso vs in-flow)
+  if (!document.body.classList.contains('home')) {
+    let lastScrollY = window.scrollY;
+    const updateScrolled = () => {
+      if (window.scrollY > 10) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+      // Chiudi il menu se l'utente scrolla mentre è aperto
+      if (Math.abs(window.scrollY - lastScrollY) > 5 &&
+          dropdown && dropdown.classList.contains('open')) {
+        closeMenu();
+      }
+      lastScrollY = window.scrollY;
+    };
+    updateScrolled();
+    window.addEventListener('scroll', updateScrolled, { passive: true });
+  }
+
   function openMenu() {
     dropdown.classList.add('open');
+    document.body.classList.add('menu-open');
     menuToggle.setAttribute('aria-expanded', 'true');
   }
 
   function closeMenu() {
     dropdown.classList.remove('open');
+    document.body.classList.remove('menu-open');
     menuToggle.setAttribute('aria-expanded', 'false');
   }
 
