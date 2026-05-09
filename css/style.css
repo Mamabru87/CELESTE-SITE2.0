@@ -1022,8 +1022,9 @@ body.home.home--light .home__privacy {
 }
 
 .dettaglio__caption .dettaglio__price {
-  display: inline-block;
-  margin-top: 0.25em;
+  display: inline;
+  margin-top: 0;
+  margin-left: 0.4em;
   color: var(--color-text-light);
   font-family: var(--font-body);
   font-size: 1.1rem;
@@ -1633,7 +1634,7 @@ body.home .home__privacy a:hover {
 
   .dettaglio__img {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     max-width: none;
   }
 
@@ -1690,7 +1691,7 @@ body.home .home__privacy a:hover {
   /* -- Studio -- */
   .studio__layout {
     flex-direction: column;
-    gap: calc(2 * var(--spacing-lg));
+    gap: var(--spacing-lg);
     width: 100%;
     margin-left: 0;
     margin-right: 0;
