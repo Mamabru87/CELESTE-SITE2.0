@@ -17,6 +17,7 @@ if (document.body.classList.contains('home')) {
     'fiori-milano-celeste-volpe.webp'
   ];
   const cellVersions = new Set([
+    'fiori-milano-celeste-14.webp',
     'fiori-milano-celeste-15.webp','fiori-milano-celeste-16.webp','fiori-milano-celeste-12.webp',
     'fiori-milano-celeste-17.webp','fiori-milano-celeste-11.webp','fiori-milano-celeste-06.webp',
     'fiori-milano-celeste-07.webp','fiori-milano-celeste-volpe.webp'
@@ -30,7 +31,7 @@ if (document.body.classList.contains('home')) {
     ? pick.replace(/\.(png|webp|jpe?g)$/i, '-cell.$1')
     : pick;
   const base = document.querySelector('script[src*="main.js"]').src.replace(/js\/main\.js.*$/, '');
-  const src = base + 'img/sfondi/' + file + '?v=20';
+  const src = base + 'img/sfondi/' + file + '?v=21';
   const preload = new Image();
   preload.onload = () => {
     // Detect average brightness via canvas sampling
