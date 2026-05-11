@@ -1367,16 +1367,6 @@ body.home .home__privacy a:hover {
 /* ---- Mobile ---- */
 @media (max-width: 768px) {
 
-  /* -- Home backgrounds on mobile: show full photo (no cropping) -- */
-  body.home {
-    background-size: contain;
-    background-position: center center;
-    background-color: var(--color-text, #1a1a1a);
-  }
-  body.home.home--light {
-    background-color: var(--color-bg, #f4f1ec);
-  }
-
   /* -- Spacing -- */
   :root {
     --spacing-lg: 2.5rem;
