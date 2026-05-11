@@ -402,11 +402,19 @@ body.home {
   height: 100vh;
   min-height: 0;           /* override base min-height */
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+html:has(body.home) {
+  height: 100vh;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body.home[data-sfondo="fiori-milano-celeste-05.png"] {
