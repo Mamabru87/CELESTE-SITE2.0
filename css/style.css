@@ -993,6 +993,14 @@ body.home.home--light .home__privacy {
   justify-items: stretch;
 }
 
+/* Aria (desktop): tre foto sulla stessa riga, la quarta sotto la prima */
+@media (min-width: 1025px) {
+  body.aria .dettaglio__img {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+  }
+}
+
 .dettaglio__figure {
   margin: 0;
   display: flex;
@@ -1796,14 +1804,3 @@ body.home .home__privacy a:hover {
 
   .studio__desc {
     font-size: 0.9rem;
-  }
-
-  .appuntamento__link,
-  .appuntamento__note {
-    font-size: var(--appuntamento-contact-font-size);
-  }
-
-  .appuntamento__info {
-    --appuntamento-contact-font-size: var(--menu-font-size);
-  }
-}
