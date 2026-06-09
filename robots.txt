@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /img/Images/
 
 Sitemap: https://www.celestemilano.it/sitemap.xml
