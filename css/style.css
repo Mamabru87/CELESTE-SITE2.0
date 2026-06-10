@@ -1004,6 +1004,7 @@ body.home.home--light .home__privacy {
   body.moire .dettaglio__img {
     align-items: end;
   }
+
 }
 
 .dettaglio__figure {
@@ -1072,6 +1073,11 @@ body.home.home--light .home__privacy {
   color: var(--color-text-light);
   line-height: 1.6;
   margin-bottom: var(--detail-rhythm-spacing);
+  /* Blocco stretto: stessa larghezza della frase "Unico e soggetto..." */
+  max-width: 19.6em;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .dettaglio__desc--dark {
