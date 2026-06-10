@@ -1818,4 +1818,11 @@ body.home .home__privacy a:hover {
   }
 
   .appuntamento__link,
-  .appuntament
+  .appuntamento__note {
+    font-size: var(--appuntamento-contact-font-size);
+  }
+
+  .appuntamento__info {
+    --appuntamento-contact-font-size: var(--menu-font-size);
+  }
+}
