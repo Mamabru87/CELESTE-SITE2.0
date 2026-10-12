@@ -1,0 +1,55 @@
+# A ogni pubblicazione avvisa Bing (e gli altri motori IndexNow) delle pagine cambiate.
+# Bing alimenta anche la ricerca di ChatGPT e Copilot.
+# La chiave è pubblica per definizione: il file <chiave>.txt nella radice del sito la conferma.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+
+permissions:
+  contents: read
+  pages: read
+
+env:
+  INDEXNOW_KEY: 10061aa199bacdbd4a6e3ccc95ccceb0
+  SITE: https://www.celestemilano.it/
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Attendi che il sito sia pubblicato
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 30); do
+            s=$(gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '.status + " " + .commit' || true)
+            if [ "$s" = "built ${{ github.sha }}" ]; then echo "Sito pubblicato."; exit 0; fi
+            sleep 20
+          done
+          echo "::warning::Pubblicazione non confermata entro 10 minuti, invio comunque."
+
+      - name: Invia le pagine cambiate
+        run: |
+          before="${{ github.event.before }}"
+          if ! git cat-file -e "$before^{commit}" 2>/dev/null; then before="HEAD~1"; fi
+          # Pagine pubbliche cambiate (escluse privacy e bacheca), index.html -> cartella
+          urls=$(git diff --name-only "$before" "${{ github.sha }}" -- '*.html' \
+            | grep -v -E '(^|/)(privacy|instagram)\.html$' \
+            | sed -e 's#index\.html$##' -e "s#^#${SITE}#")
+          if [ -z "$urls" ]; then echo "Nessuna pagina cambiata."; exit 0; fi
+          echo "$urls"
+          json=$(printf '%s\n' $urls | jq -R . | jq -s \
+            --arg key "$INDEXNOW_KEY" --arg site "$SITE" \
+            '{host: "www.celestemilano.it", key: $key, keyLocation: ($site + $key + ".txt"), urlList: .}')
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$json")
+          echo "Risposta IndexNow: $code"
+          # 200 = ricevuto, 202 = in verifica della chiave
+          [ "$code" = "200" ] || [ "$code" = "202" ]

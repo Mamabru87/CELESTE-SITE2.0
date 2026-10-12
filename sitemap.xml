@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Home -->
   <url>
@@ -19,6 +20,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/collezioni.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/collezioni.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/collezioni.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-moire-celeste-milano-fiorista.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -30,6 +33,9 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/aria.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/aria.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/aria.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-aria-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-aria-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -41,6 +47,10 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/moire.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/moire.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/moire.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-moire-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-moire-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-moire-celeste-milano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/dettaglio-fiori-moire-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -52,6 +62,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/matrimoni-eventi.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/matrimoni-eventi.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/matrimoni-eventi.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-aria-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-moire-celeste-milano-matrimonio.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -63,6 +75,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/abbonamenti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/abbonamenti.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/abbonamenti.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-aria-celeste-milano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-moire-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -107,6 +121,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/collezioni.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/collezioni.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/collezioni.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-moire-celeste-milano-fiorista.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -118,6 +134,9 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/aria.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/aria.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/aria.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-aria-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-aria-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-aria-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -129,6 +148,10 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/moire.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/moire.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/moire.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/composizione-floreale-moire-celeste-milano-fiorista.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-moire-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-moire-celeste-milano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/dettaglio-fiori-moire-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -140,6 +163,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/matrimoni-eventi.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/matrimoni-eventi.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/matrimoni-eventi.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-aria-celeste-milano-matrimonio.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/bouquet-moire-celeste-milano-matrimonio.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -151,6 +176,8 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.celestemilano.it/abbonamenti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.celestemilano.it/en/abbonamenti.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.celestemilano.it/abbonamenti.html"/>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-aria-celeste-milano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.celestemilano.it/img/scenografia-botanica-moire-celeste-milano.jpg</image:loc></image:image>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
