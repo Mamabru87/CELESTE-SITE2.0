@@ -537,6 +537,29 @@ body.home[data-sfondo="fiori-milano-celeste-volpe-cell.webp"] .header__menu-togg
   color: var(--color-text);
 }
 
+/* Scritte in basso in nero solo dove il bianco non si legge sullo sfondo */
+@media (min-width: 769px) {
+  body.home[data-sfondo="fiori-milano-celeste-14.webp"] .home__city,
+  body.home[data-sfondo="fiori-milano-celeste-15.webp"] .home__city,
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__lang,
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__privacy,
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__city,
+  body.home[data-sfondo="fiori-milano-celeste-07.webp"] .home__lang,
+  body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .home__lang,
+  body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .home__privacy,
+  body.home[data-sfondo="fiori-milano-celeste-volpe.webp"] .home__city {
+    color: var(--color-text);
+  }
+}
+
+@media (max-width: 768px) {
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__lang,
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__privacy,
+  body.home[data-sfondo="fiori-milano-celeste-12.webp"] .home__city {
+    color: var(--color-text);
+  }
+}
+
 body.home .home__city {
   position: fixed;
   right: 5vw;
