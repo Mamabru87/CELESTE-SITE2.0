@@ -148,14 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
       isOpen ? closeMenu() : openMenu();
     });
 
-    // Chiudi il menu quando si clicca un link
-    dropdown.querySelectorAll('a').forEach(link => {
+    // Chiudi il menu quando si clicca un link (escluso "Collezioni", gestito sotto)
+    dropdown.querySelectorAll('a:not(.header__nav-toggle)').forEach(link => {
       link.addEventListener('click', () => closeMenu());
     });
 
     // Submenu Collezioni: comportamento condizionale.
+    // "Collezioni" è un vero link a collezioni.html (così i motori di ricerca lo seguono).
     // Solo nelle pagine "dentro collezioni" (collezioni.html, aria.html, moire.html)
-    // il click apre il sotto-menu Aria/Moiré. Altrove naviga direttamente a collezioni.html.
+    // il primo click apre il sotto-menu Aria/Moiré. Altrove naviga direttamente.
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const isInCollezioni = /^(collezioni|aria|moire)\.html$/.test(path);
 
@@ -165,22 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isInCollezioni) {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          // Se il submenu è già aperto, naviga alla pagina collezioni
-          if (submenu.classList.contains('open')) {
-            window.location.href = 'collezioni.html';
-            return;
-          }
+          // Se il submenu è già aperto, lascia navigare il link alla pagina collezioni
+          if (submenu.classList.contains('open')) return;
+          e.preventDefault();
           submenu.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
         });
       } else {
-        // Naviga diretto a collezioni.html, niente submenu
+        // Il link porta diretto a collezioni.html, niente submenu
         submenu.setAttribute('hidden', '');
         btn.removeAttribute('aria-controls');
         btn.removeAttribute('aria-expanded');
-        btn.addEventListener('click', () => {
-          window.location.href = 'collezioni.html';
-        });
       }
     });
 

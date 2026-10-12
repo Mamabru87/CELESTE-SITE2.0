@@ -1140,6 +1140,37 @@ body.home.home--light .home__privacy {
   opacity: 0.5;
 }
 
+/* Link nel testo (pagine servizio, collezioni) */
+.dettaglio__desc a,
+.dettaglio__caption a {
+  color: var(--color-text);
+}
+
+.dettaglio__desc a:hover,
+.dettaglio__caption a:hover {
+  opacity: 0.5;
+}
+
+/* Ancore (es. studio → #vase-en-residence): non finire sotto il MENÙ fisso */
+.dettaglio__label[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Collezioni: testo sotto la griglia, allineato alla prima colonna */
+.collezioni__text {
+  max-width: 880px;
+  margin: var(--detail-rhythm-spacing) auto 0;
+}
+
+.collezioni__text .dettaglio__desc:last-child {
+  margin-bottom: 0;
+}
+
+/* Studio: servizi cliccabili verso le pagine dedicate */
+.studio__label a:hover {
+  opacity: 0.5;
+}
+
 /* ============================================
    MAIN CONTENT
    ============================================ */
@@ -1671,6 +1702,11 @@ body.home .home__privacy a:hover {
 
   .dettaglio__caption {
     margin-top: 4px;
+  }
+
+  /* Titoli visibili delle pagine servizio: su due righe serve più interlinea */
+  .dettaglio__title {
+    line-height: 1.4;
   }
 
   .dettaglio__figure picture {
